@@ -10,8 +10,9 @@ function ToggleButton({ children, isActive, onClick }) {
   return (
     <button
       className={clsx(
-        "flex min-w-32 flex-col items-center rounded-xl border-solid p-4 text-lg font-medium transition-colors duration-150 ease-in-out",
-        isActive && "bg-gray-200 font-bold text-indigo-950",
+        "flex min-w-28 flex-col items-center rounded-xl border-solid p-2 font-normal transition-colors duration-150 ease-in-out",
+        "md:p-4 md:text-lg md:w-32",
+        isActive && "bg-gray-200 !font-bold text-indigo-950",
       )}
       onClick={onClick}
     >
@@ -29,14 +30,14 @@ function FormModeToggle() {
         isActive={activeButton === "content"}
         onClick={() => setActiveButton("content")}
       >
-        <DocumentTextIcon className="size-9" />
+        <DocumentTextIcon className="size-6 md:size-9" />
         Content
       </ToggleButton>
       <ToggleButton
         isActive={activeButton === "customize"}
         onClick={() => setActiveButton("customize")}
       >
-        <WrenchScrewdriverIcon className="size-9" />
+        <WrenchScrewdriverIcon className="size-6 md:size-9" />
         Customize
       </ToggleButton>
     </div>

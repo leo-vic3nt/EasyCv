@@ -2,7 +2,7 @@ import FormModeToggle from "./components/FormModeToggle";
 
 function App() {
   return (
-    <div className="m-auto flex min-h-full max-w-screen-2xl justify-center bg-gray-200 px-6 py-8">
+    <div className="container m-auto flex min-h-full justify-center bg-gray-200 sm:px-6 py-8">
       <FormModeToggle></FormModeToggle>
     </div>
   );
