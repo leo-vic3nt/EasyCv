@@ -2,6 +2,7 @@
 import CurriculumVitae from "./components/CurriculumVitae";
 import FormControls from "./components/FormControls";
 import FormModeToggle from "./components/FormModeToggle";
+import PersonalDetails from "./components/PersonalDetails";
 import SideControlsContainer from "./components/SideControlsContainer";
 
 function Container({ children }) {
@@ -18,6 +19,7 @@ function App() {
       <SideControlsContainer>
         <FormModeToggle />
         <FormControls />
+        <PersonalDetails/>
       </SideControlsContainer>
 
       <CurriculumVitae />
