@@ -6,12 +6,19 @@ import {
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
 
+function Container({ children }) {
+  return (
+    <div className="flex h-fit w-full flex-col rounded-2xl bg-white p-2 shadow-md shadow-slate-300">
+      {children}
+    </div>
+  );
+}
+
 function ToggleButton({ children, isActive, onClick }) {
   return (
     <button
       className={clsx(
-        "flex w-24 flex-col items-center rounded-xl border-solid p-2 font-normal transition-colors duration-150 ease-in-out active:scale-95",
-        "lg:w-32 lg:p-4 lg:text-lg",
+        "flex w-full flex-col items-center rounded-xl border-solid px-2 py-3 font-normal transition-colors duration-150 ease-in-out active:scale-95",
         isActive && "bg-gray-200 !font-bold text-indigo-950",
       )}
       onClick={onClick}
@@ -25,22 +32,22 @@ function FormModeToggle() {
   const [activeButton, setActiveButton] = useState("content");
 
   return (
-    <div className="flex h-fit w-fit flex-col gap-4 rounded-2xl bg-white p-2 shadow-md shadow-slate-300 lg:w-full">
+    <Container>
       <ToggleButton
         isActive={activeButton === "content"}
         onClick={() => setActiveButton("content")}
       >
-        <DocumentTextIcon className="size-6 lg:size-9" />
-        <p>Content</p>
+        <DocumentTextIcon className="size-8" />
+        Content
       </ToggleButton>
       <ToggleButton
         isActive={activeButton === "customize"}
         onClick={() => setActiveButton("customize")}
       >
-        <WrenchScrewdriverIcon className="size-6 lg:size-9" />
-        <p>Customize</p>
+        <WrenchScrewdriverIcon className="size-8" />
+        Customize
       </ToggleButton>
-    </div>
+    </Container>
   );
 }
 

@@ -1,10 +1,27 @@
+/* eslint-disable react/prop-types */
+import CurriculumVitae from "./components/CurriculumVitae";
+import FormControls from "./components/FormControls";
 import FormModeToggle from "./components/FormModeToggle";
+import SideControlsContainer from "./components/SideControlsContainer";
+
+function Container({ children }) {
+  return (
+    <div className="m-auto flex min-h-full w-full max-w-screen-2xl justify-center gap-16 bg-gray-200 px-4 py-4 lg:py-7">
+      {children}
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="container m-auto flex min-h-full justify-center bg-gray-200 py-8 sm:px-6">
-      <FormModeToggle></FormModeToggle>
-    </div>
+    <Container>
+      <SideControlsContainer>
+        <FormModeToggle />
+        <FormControls />
+      </SideControlsContainer>
+
+      <CurriculumVitae />
+    </Container>
   );
 }
 
