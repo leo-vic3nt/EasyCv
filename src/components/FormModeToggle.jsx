@@ -19,7 +19,7 @@ function ToggleButton({ children, isActive, onClick }) {
     <button
       className={clsx(
         "flex w-full flex-col items-center rounded-xl border-solid py-1 font-medium transition-colors duration-150 ease-in-out active:scale-95",
-        isActive && "bg-gray-200 !font-bold text-indigo-950",
+        isActive && "bg-gray-200 !font-semibold text-indigo-950",
       )}
       onClick={onClick}
     >
