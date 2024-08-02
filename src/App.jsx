@@ -7,7 +7,7 @@ import SideControlsContainer from "./components/SideControlsContainer";
 
 function Container({ children }) {
   return (
-    <div className="m-auto flex min-h-full w-full max-w-screen-2xl justify-center gap-16 bg-gray-200 px-4 py-4 lg:py-7">
+    <div className="m-auto flex min-h-full w-full max-w-screen-2xl justify-center gap-4 lg:gap-16 bg-gray-200 px-4 py-4 lg:py-7">
       {children}
     </div>
   );
