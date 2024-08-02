@@ -10,8 +10,8 @@ function ToggleButton({ children, isActive, onClick }) {
   return (
     <button
       className={clsx(
-        "flex min-w-28 flex-col items-center rounded-xl border-solid p-2 font-normal transition-colors duration-150 ease-in-out",
-        "lg:p-4 lg:text-lg lg:w-32",
+        "flex min-w-28 flex-col items-center rounded-xl border-solid p-2 font-normal transition-colors duration-150 ease-in-out active:scale-95",
+        "lg:w-32 lg:p-4 lg:text-lg",
         isActive && "bg-gray-200 !font-bold text-indigo-950",
       )}
       onClick={onClick}
@@ -25,7 +25,7 @@ function FormModeToggle() {
   const [activeButton, setActiveButton] = useState("content");
 
   return (
-    <div className="flex h-fit flex-col gap-4 rounded-2xl bg-white px-2 py-3 shadow-md shadow-slate-300">
+    <div className="flex h-fit w-fit flex-col gap-4 rounded-2xl bg-white px-2 py-3 shadow-md shadow-slate-300 lg:w-full">
       <ToggleButton
         isActive={activeButton === "content"}
         onClick={() => setActiveButton("content")}
