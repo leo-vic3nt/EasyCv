@@ -3,7 +3,7 @@ import { useState } from "react";
 import { clsx } from "clsx";
 import {
   DocumentTextIcon,
-  WrenchScrewdriverIcon,
+  PencilSquareIcon,
 } from "@heroicons/react/24/outline";
 
 function Container({ children }) {
@@ -44,7 +44,7 @@ function FormModeToggle() {
         isActive={activeButton === "customize"}
         onClick={() => setActiveButton("customize")}
       >
-        <WrenchScrewdriverIcon className="size-8" />
+        <PencilSquareIcon className="size-8" />
         Customize
       </ToggleButton>
     </Container>
