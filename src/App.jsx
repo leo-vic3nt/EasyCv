@@ -17,8 +17,8 @@ function App() {
   return (
     <Container>
       <SideControlsContainer>
-        <FormModeToggle />
         <FormControls />
+        <FormModeToggle />
         <PersonalDetails/>
       </SideControlsContainer>
 
