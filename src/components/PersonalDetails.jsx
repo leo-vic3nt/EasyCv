@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { UserCircleIcon } from "@heroicons/react/24/outline";
 
 function Container({ children }) {
   return (
@@ -14,7 +15,7 @@ function FormInput({ name, label, value, onChange, type }) {
     <div className="mb-4">
       <label
         htmlFor={name}
-        className="mb-2 block  font-medium capitalize text-gray-700"
+        className="mb-2 block font-medium capitalize text-gray-700"
       >
         {label}
       </label>
@@ -75,7 +76,10 @@ function DataForm() {
 function PersonalDetails() {
   return (
     <Container>
-      <h3 className="text-2xl font-bold">Personal Details</h3>
+      <h3 className="flex gap-1 items-center text-2xl font-bold">
+        <UserCircleIcon className="size-7"/>
+        Personal Details
+      </h3>
       <DataForm />
     </Container>
   );
