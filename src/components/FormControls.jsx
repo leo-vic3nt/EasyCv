@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { TrashIcon, ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
+import { TrashIcon, ArrowUturnLeftIcon, ArrowDownOnSquareIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 
 function Container({ children }) {
@@ -33,6 +33,10 @@ function FormControls() {
       <ControlButton>
         <ArrowUturnLeftIcon className="size-5" />
         defaults
+      </ControlButton>
+      <ControlButton>
+        <ArrowDownOnSquareIcon className="size-5" />
+        download
       </ControlButton>
     </Container>
   );
