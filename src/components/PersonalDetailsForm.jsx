@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
 import { DUMMY_DATA } from "../lib/constants";
 
@@ -32,33 +32,34 @@ function FormInput({ name, label, value, onChange, onBlur, type }) {
   );
 }
 
-function DataForm() {
-  const [fullName, setFullName] = useState("John Doe");
-  const [phone, setPhone] = useState("+55 85 994567732");
-  const [email, setEmail] = useState("john.doe@email.com");
-  const [location, setLocation] = useState("São Paulo, Brazil");
-
-  const handleBlur = useCallback((e) => {
-    const { id, value } = e.target;
-    if (value === "") {
-      switch (id) {
-        case "fullName":
-          setFullName(DUMMY_DATA.fullName);
-          break;
-        case "phoneNumber":
-          setPhone(DUMMY_DATA.phoneNumber);
-          break;
-        case "email":
-          setEmail(DUMMY_DATA.email);
-          break;
-        case "location":
-          setLocation(DUMMY_DATA.location);
-          break;
-        default:
-          break;
+function DataForm({ cvData, setCvData }) {
+  const handleBlur = useCallback(
+    (e) => {
+      const { id, value } = e.target;
+      if (value === "") {
+        switch (id) {
+          case "fullName":
+            setCvData((data) => ({ ...data, fullName: DUMMY_DATA.fullName }));
+            break;
+          case "phoneNumber":
+            setCvData((data) => ({
+              ...data,
+              phoneNumber: DUMMY_DATA.phoneNumber,
+            }));
+            break;
+          case "email":
+            setCvData((data) => ({ ...data, email: DUMMY_DATA.email }));
+            break;
+          case "location":
+            setCvData((data) => ({ ...data, location: DUMMY_DATA.location }));
+            break;
+          default:
+            break;
+        }
       }
-    }
-  }, []);
+    },
+    [setCvData],
+  );
 
   return (
     <form>
@@ -66,8 +67,10 @@ function DataForm() {
         name="fullName"
         label="full name"
         onBlur={handleBlur}
-        value={fullName}
-        onChange={(e) => setFullName(e.target.value)}
+        value={cvData.fullName}
+        onChange={(e) =>
+          setCvData((data) => ({ ...data, fullName: e.target.value }))
+        }
         type="text"
       />
 
@@ -75,8 +78,10 @@ function DataForm() {
         name="phoneNumber"
         label="phone number"
         onBlur={handleBlur}
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
+        value={cvData.phoneNumber}
+        onChange={(e) =>
+          setCvData((data) => ({ ...data, phoneNumber: e.target.value }))
+        }
         type="tel"
       />
 
@@ -84,8 +89,10 @@ function DataForm() {
         name="email"
         label="email"
         onBlur={handleBlur}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={cvData.email}
+        onChange={(e) =>
+          setCvData((data) => ({ ...data, email: e.target.value }))
+        }
         type="email"
       />
 
@@ -93,22 +100,24 @@ function DataForm() {
         name="location"
         label="location"
         onBlur={handleBlur}
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
+        value={cvData.location}
+        onChange={(e) =>
+          setCvData((data) => ({ ...data, location: e.target.value }))
+        }
         type="text"
       />
     </form>
   );
 }
 
-function PersonalDetailsForm() {
+function PersonalDetailsForm({ cvData, setCvData }) {
   return (
     <Container>
       <h3 className="flex items-center gap-1 text-2xl font-bold">
         <UserCircleIcon className="mt-1 size-7 text-gray-800" />
         Personal Details
       </h3>
-      <DataForm />
+      <DataForm cvData={cvData} setCvData={setCvData} />
     </Container>
   );
 }

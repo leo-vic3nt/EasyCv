@@ -5,7 +5,7 @@ import ActionsBar from "./components/ActionsBar";
 import ModeToggle from "./components/ModeToggle";
 import SideControls from "./components/SideControls";
 import ContentEditor from "./components/ContentEditor";
-import { EDITOR_MODES } from "./lib/constants";
+import { DUMMY_DATA, EDITOR_MODES } from "./lib/constants";
 
 function Container({ children }) {
   return (
@@ -17,6 +17,7 @@ function Container({ children }) {
 
 function App() {
   const [currentMode, setMode] = useState(EDITOR_MODES.contentEditor);
+  const [cvData, setCvData] = useState(DUMMY_DATA);
 
   return (
     <Container>
@@ -24,7 +25,7 @@ function App() {
         <ActionsBar />
         <ModeToggle setMode={setMode} />
         {currentMode === EDITOR_MODES.contentEditor ? (
-          <ContentEditor />
+          <ContentEditor  cvData={cvData} setCvData={setCvData}/>
         ) : (
           <h1>heeey</h1>
         )}
