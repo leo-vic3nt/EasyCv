@@ -5,10 +5,11 @@ import {
   DocumentTextIcon,
   PencilSquareIcon,
 } from "@heroicons/react/24/outline";
+import { EDITOR_MODES } from "../lib/constants";
 
 function Container({ children }) {
   return (
-    <div className="flex h-fit w-2/3 my-0 mx-auto flex-col rounded-2xl bg-white p-2 shadow-md shadow-slate-300">
+    <div className="mx-auto my-0 flex h-fit w-2/3 flex-col rounded-2xl bg-white p-2 shadow-md shadow-slate-300">
       {children}
     </div>
   );
@@ -28,21 +29,27 @@ function ToggleButton({ children, isActive, onClick }) {
   );
 }
 
-function ModeToggle() {
+function ModeToggle({ setMode }) {
   const [activeButton, setActiveButton] = useState("content");
 
   return (
     <Container>
       <ToggleButton
         isActive={activeButton === "content"}
-        onClick={() => setActiveButton("content")}
+        onClick={() => {
+          setMode(EDITOR_MODES.contentEditor);
+          setActiveButton("content");
+        }}
       >
         <DocumentTextIcon className="size-6" />
         Content
       </ToggleButton>
       <ToggleButton
         isActive={activeButton === "customize"}
-        onClick={() => setActiveButton("customize")}
+        onClick={() => {
+          setMode(EDITOR_MODES.customize);
+          setActiveButton("customize");
+        }}
       >
         <PencilSquareIcon className="size-6" />
         Customize

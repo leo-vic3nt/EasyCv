@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useState } from "react";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
-import { defaultData } from "../lib/constants";
+import { DUMMY_DATA } from "../lib/constants";
 
 function Container({ children }) {
   return (
@@ -43,16 +43,16 @@ function DataForm() {
     if (value === "") {
       switch (id) {
         case "fullName":
-          setFullName(defaultData.fullName);
+          setFullName(DUMMY_DATA.fullName);
           break;
         case "phoneNumber":
-          setPhone(defaultData.phoneNumber);
+          setPhone(DUMMY_DATA.phoneNumber);
           break;
         case "email":
-          setEmail(defaultData.email);
+          setEmail(DUMMY_DATA.email);
           break;
         case "location":
-          setLocation(defaultData.location);
+          setLocation(DUMMY_DATA.location);
           break;
         default:
           break;
@@ -105,7 +105,7 @@ function PersonalDetailsForm() {
   return (
     <Container>
       <h3 className="flex items-center gap-1 text-2xl font-bold">
-        <UserCircleIcon className="size-7 mt-1 text-gray-800" />
+        <UserCircleIcon className="mt-1 size-7 text-gray-800" />
         Personal Details
       </h3>
       <DataForm />

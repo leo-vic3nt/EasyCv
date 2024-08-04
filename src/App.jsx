@@ -5,6 +5,7 @@ import ActionsBar from "./components/ActionsBar";
 import ModeToggle from "./components/ModeToggle";
 import SideControls from "./components/SideControls";
 import ContentEditor from "./components/ContentEditor";
+import { EDITOR_MODES } from "./lib/constants";
 
 function Container({ children }) {
   return (
@@ -14,20 +15,19 @@ function Container({ children }) {
   );
 }
 
-const MODES = Object.freeze({
-  content: 1,
-  customize: 2,
-});
-
 function App() {
-  const [currentMode, setCurrentMode] = useState(MODES.content);
+  const [currentMode, setMode] = useState(EDITOR_MODES.contentEditor);
 
   return (
     <Container>
       <SideControls>
         <ActionsBar />
-        <ModeToggle />
-        {currentMode === MODES.content ? <ContentEditor /> : <h1>heeey</h1>}
+        <ModeToggle setMode={setMode} />
+        {currentMode === EDITOR_MODES.contentEditor ? (
+          <ContentEditor />
+        ) : (
+          <h1>heeey</h1>
+        )}
       </SideControls>
 
       <CurriculumVitae />
