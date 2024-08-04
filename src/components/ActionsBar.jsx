@@ -23,7 +23,7 @@ function ControlButton({ children, customStyle = null }) {
   );
 }
 
-function FormControls() {
+function ActionsBar() {
   return (
     <Container>
       <ControlButton customStyle={"text-red-600"}>
@@ -42,4 +42,4 @@ function FormControls() {
   );
 }
 
-export default FormControls;
+export default ActionsBar;

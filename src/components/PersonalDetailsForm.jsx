@@ -101,7 +101,7 @@ function DataForm() {
   );
 }
 
-function PersonalDetails() {
+function PersonalDetailsForm() {
   return (
     <Container>
       <h3 className="flex items-center gap-1 text-2xl font-bold">
@@ -113,4 +113,4 @@ function PersonalDetails() {
   );
 }
 
-export default PersonalDetails;
+export default PersonalDetailsForm;

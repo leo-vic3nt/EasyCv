@@ -28,7 +28,7 @@ function ToggleButton({ children, isActive, onClick }) {
   );
 }
 
-function FormModeToggle() {
+function ModeToggle() {
   const [activeButton, setActiveButton] = useState("content");
 
   return (
@@ -51,4 +51,4 @@ function FormModeToggle() {
   );
 }
 
-export default FormModeToggle;
+export default ModeToggle;
