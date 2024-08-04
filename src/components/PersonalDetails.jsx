@@ -105,7 +105,7 @@ function PersonalDetails() {
   return (
     <Container>
       <h3 className="flex items-center gap-1 text-2xl font-bold">
-        <UserCircleIcon className="size-7" />
+        <UserCircleIcon className="size-7 mt-1 text-gray-800" />
         Personal Details
       </h3>
       <DataForm />
