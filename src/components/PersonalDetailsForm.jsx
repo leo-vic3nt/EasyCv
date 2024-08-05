@@ -23,7 +23,7 @@ function FormInput({ name, label, value, onChange, onBlur, type }) {
       <input
         type={type}
         id={name}
-        className="focus:shadow-outline w-full appearance-none rounded-xl border bg-gray-200 px-3 py-2 leading-tight focus:outline-none"
+        className="focus:shadow-outline w-full appearance-none rounded-xl bg-gray-100 px-3 py-2 leading-tight focus:outline-none"
         value={value}
         onChange={onChange}
         onBlur={onBlur}
