@@ -2,14 +2,15 @@
 import { useCallback } from "react";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
 import { DUMMY_DATA } from "../lib/constants";
+import SideCard from "./SideCard";
 
-function Container({ children }) {
-  return (
-    <div className="flex w-full flex-col gap-3 rounded-xl bg-white px-5 py-3 shadow-md shadow-slate-300">
-      {children}
-    </div>
-  );
-}
+// function Container({ children }) {
+//   return (
+//     <div className="flex w-full flex-col gap-3 rounded-xl bg-white px-5 py-3 shadow-md shadow-slate-300">
+//       {children}
+//     </div>
+//   );
+// }
 
 function FormInput({ name, label, value, onChange, onBlur, type }) {
   return (
@@ -28,15 +29,6 @@ function FormInput({ name, label, value, onChange, onBlur, type }) {
         onChange={onChange}
         onBlur={onBlur}
       />
-    </div>
-  );
-}
-
-function Header() {
-  return (
-    <div className="flex justify-between">
-      <h3 className="text-2xl font-bold">Personal Details</h3>
-      <UserCircleIcon className="mt-1 size-7 text-gray-800" />
     </div>
   );
 }
@@ -121,10 +113,9 @@ function DataForm({ cvData, setCvData }) {
 
 function PersonalDetailsForm({ cvData, setCvData }) {
   return (
-    <Container>
-      <Header />
+    <SideCard title={"personal details"} icon={<UserCircleIcon />}>
       <DataForm cvData={cvData} setCvData={setCvData} />
-    </Container>
+    </SideCard>
   );
 }
 
