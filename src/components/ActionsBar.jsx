@@ -8,7 +8,7 @@ import clsx from "clsx";
 
 function Container({ children }) {
   return (
-    <div className="flex flex-col items-center gap-2 rounded-xl bg-white px-2 py-2 shadow-md shadow-slate-300 :flex-row">
+    <div className=":flex-row flex w-2/3 flex-col items-center gap-2 rounded-xl bg-white px-2 py-2 shadow-md shadow-slate-300">
       {children}
     </div>
   );

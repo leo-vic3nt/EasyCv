@@ -5,7 +5,7 @@ import { DUMMY_DATA } from "../lib/constants";
 
 function Container({ children }) {
   return (
-    <div className="flex flex-col gap-3 rounded-xl bg-white px-5 py-3 shadow-md shadow-slate-300">
+    <div className="flex w-full flex-col gap-3 rounded-xl bg-white px-5 py-3 shadow-md shadow-slate-300">
       {children}
     </div>
   );

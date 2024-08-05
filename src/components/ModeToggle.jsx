@@ -9,7 +9,7 @@ import { EDITOR_MODES } from "../lib/constants";
 
 function Container({ children }) {
   return (
-    <div className="mx-auto my-0 flex h-fit w-2/3 flex-col rounded-2xl bg-white p-2 shadow-md shadow-slate-300">
+    <div className="my-0 flex h-fit w-2/3 flex-col rounded-2xl bg-white p-2 shadow-md shadow-slate-300">
       {children}
     </div>
   );

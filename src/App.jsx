@@ -3,7 +3,7 @@ import { useState } from "react";
 import CurriculumVitae from "./components/CurriculumVitae";
 import ActionsBar from "./components/ActionsBar";
 import ModeToggle from "./components/ModeToggle";
-import SideControls from "./components/SideControls";
+import SideContainer from "./components/SideContainer";
 import ContentEditor from "./components/ContentEditor";
 import { DUMMY_DATA, EDITOR_MODES } from "./lib/constants";
 
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <Container>
-      <SideControls>
+      <SideContainer>
         <ActionsBar />
         <ModeToggle setMode={setMode} />
         {currentMode === EDITOR_MODES.contentEditor ? (
@@ -29,7 +29,7 @@ function App() {
         ) : (
           <h1>heeey</h1>
         )}
-      </SideControls>
+      </SideContainer>
 
       <CurriculumVitae />
     </Container>
