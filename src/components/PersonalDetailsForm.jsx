@@ -32,6 +32,15 @@ function FormInput({ name, label, value, onChange, onBlur, type }) {
   );
 }
 
+function Header() {
+  return (
+    <div className="flex justify-between">
+      <h3 className="text-2xl font-bold">Personal Details</h3>
+      <UserCircleIcon className="mt-1 size-7 text-gray-800" />
+    </div>
+  );
+}
+
 function DataForm({ cvData, setCvData }) {
   const handleBlur = useCallback(
     (e) => {
@@ -113,10 +122,7 @@ function DataForm({ cvData, setCvData }) {
 function PersonalDetailsForm({ cvData, setCvData }) {
   return (
     <Container>
-      <h3 className="flex items-center gap-1 text-2xl font-bold">
-        <UserCircleIcon className="mt-1 size-7 text-gray-800" />
-        Personal Details
-      </h3>
+      <Header />
       <DataForm cvData={cvData} setCvData={setCvData} />
     </Container>
   );
