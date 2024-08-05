@@ -8,7 +8,7 @@ import clsx from "clsx";
 
 function Container({ children }) {
   return (
-    <div className=":flex-row flex w-2/3 flex-col items-center gap-2 rounded-xl bg-white px-2 py-2 shadow-md shadow-slate-300">
+    <div className="flex w-2/3 flex-col items-center gap-2 rounded-xl bg-white px-2 py-2 shadow-md shadow-slate-300">
       {children}
     </div>
   );
@@ -35,11 +35,11 @@ function ActionsBar() {
         clear data
       </ControlButton>
       <ControlButton>
-        <ArrowUturnLeftIcon className="size-5" />
+        <ArrowUturnLeftIcon className="size-5 min-w-8" />
         defaults
       </ControlButton>
       <ControlButton>
-        <ArrowDownOnSquareIcon className="size-5" />
+        <ArrowDownOnSquareIcon className="size-5 min-w-8" />
         download
       </ControlButton>
     </Container>
