@@ -12,7 +12,7 @@ function CardHeader({ title, icon }) {
   return (
     <div className="flex justify-between">
       <h3 className="text-2xl font-bold capitalize">{title}</h3>
-      <span className="size-10">{icon}</span>
+      <span className="mr-2 size-9">{icon}</span>
     </div>
   );
 }
