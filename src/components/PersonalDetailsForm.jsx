@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useCallback } from "react";
-import { IdentificationIcon } from "@heroicons/react/24/outline";
+import { UserCircleIcon } from "@heroicons/react/24/outline";
 import { DUMMY_DATA } from "../lib/constants";
 import SideCard from "./SideCard";
 
@@ -105,7 +105,10 @@ function DataForm({ cvData, setCvData }) {
 
 function PersonalDetailsForm({ cvData, setCvData }) {
   return (
-    <SideCard title={"personal details"} icon={<IdentificationIcon />}>
+    <SideCard
+      title={"personal details"}
+      icon={<UserCircleIcon className="stroke-1" />}
+    >
       <DataForm cvData={cvData} setCvData={setCvData} />
     </SideCard>
   );

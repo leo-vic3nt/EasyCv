@@ -17,7 +17,7 @@ function CardHeader({ title, icon }) {
   );
 }
 
-function SideCard({ title, icon, children }) {
+function SideCard({ title, icon = null, children }) {
   return (
     <Container>
       <CardHeader title={title} icon={icon} />
