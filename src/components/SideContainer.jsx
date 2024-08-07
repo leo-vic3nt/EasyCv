@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
 function SideContainer({ children }) {
-  return <div className="flex items-center w-2/5 min-w-72 flex-col gap-8">{children}</div>;
+  return (
+    <div className="flex w-full min-w-72 max-w-lg flex-col items-center gap-8">
+      {children}
+    </div>
+  );
 }
 
-export default SideContainer;
+export default SideContainer;       
