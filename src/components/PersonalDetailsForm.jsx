@@ -4,14 +4,6 @@ import { IdentificationIcon } from "@heroicons/react/24/outline";
 import { DUMMY_DATA } from "../lib/constants";
 import SideCard from "./SideCard";
 
-// function Container({ children }) {
-//   return (
-//     <div className="flex w-full flex-col gap-3 rounded-xl bg-white px-5 py-3 shadow-md shadow-slate-300">
-//       {children}
-//     </div>
-//   );
-// }
-
 function FormInput({ name, label, value, onChange, onBlur, type }) {
   return (
     <div className="mb-4">
