@@ -120,6 +120,9 @@
 				"noDelete": "warn",
 				"noReExportAll": "warn"
 			},
+			"nursery": {
+				"useSortedClasses": "info"
+			},
 			"style": {
 				"noArguments": "warn",
 				"noCommaOperator": "error",
