@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { CurriculumVitae } from "./components/CurriculumVitae";
-import { ActionsBar } from "./components/ActionsBar";
-import { ModeToggle } from "./components/ModeToggle";
-import { SideContainer } from "./components/SideContainer";
-import { ContentEditor } from "./components/ContentEditor";
+import { CurriculumVitae } from "./components/CurriculumVitae/CurriculumVitae";
+import { ActionsBar } from "./components/Aside/ActionsBar";
+import { ModeToggle } from "./components/Aside/ModeToggle";
+import { SideContainer } from "./components/Aside/SideContainer";
+import { ContentEditor } from "./components/Aside/ContentEditor";
 import { DUMMY_DATA, EDITOR_MODES } from "./lib/constants";
 
 function Container({ children }) {

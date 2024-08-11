@@ -4,7 +4,7 @@ import {
 	DocumentTextIcon,
 	PencilSquareIcon,
 } from "@heroicons/react/24/outline";
-import { EDITOR_MODES } from "../lib/constants";
+import { EDITOR_MODES } from "../../lib/constants";
 
 function Container({ children }) {
 	return (
