@@ -35,6 +35,8 @@ function DataList({ children }) {
 	return <div>{children}</div>;
 }
 
+// @todo finish implementation, data list and item component
+
 function EducationData({ cvData, setCvData }) {
 	const [formActive, setFormActive] = useState(false);
 

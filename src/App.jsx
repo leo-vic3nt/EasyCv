@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { CurriculumVitae } from "./components/CurriculumVitae/CurriculumVitae";
+import { CurriculumVitaeContainer } from "./components/CurriculumVitae/CurriculumVitaeContainer";
 import { ActionsBar } from "./components/Aside/ActionsBar";
 import { ModeToggle } from "./components/Aside/ModeToggle";
 import { SideContainer } from "./components/Aside/SideContainer";
 import { ContentEditor } from "./components/Aside/ContentEditor";
 import { DUMMY_DATA, EDITOR_MODES } from "./lib/constants";
+import { StyleEditor } from "./components/Aside/StyleEditor";
 
 function Container({ children }) {
 	return (
@@ -27,11 +28,11 @@ function App() {
 				{currentMode === EDITOR_MODES.contentEditor ? (
 					<ContentEditor cvData={cvData} setCvData={setCvData} />
 				) : (
-					<h1>heeey</h1>
+					<StyleEditor />
 				)}
 			</SideContainer>
 
-			<CurriculumVitae />
+			<CurriculumVitaeContainer />
 		</Container>
 	);
 }
