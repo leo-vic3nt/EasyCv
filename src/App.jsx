@@ -32,7 +32,7 @@ function App() {
 				)}
 			</SideContainer>
 
-			<CurriculumVitaeContainer />
+			<CurriculumVitaeContainer cvData={cvData} />
 		</Container>
 	);
 }

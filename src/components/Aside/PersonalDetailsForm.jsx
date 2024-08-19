@@ -46,9 +46,24 @@ function DataForm({ cvData, setCvData }) {
 					case "location":
 						setCvData((data) => ({ ...data, location: DUMMY_DATA.location }));
 						break;
+					case "github":
+						setCvData((data) => ({ ...data, github: DUMMY_DATA.github }));
+						break;
+					case "linkedin":
+						setCvData((data) => ({ ...data, linkedin: DUMMY_DATA.linkedin }));
+						break;
 					default:
 						break;
 				}
+				return;
+			}
+
+			const cleanUrl = (url) => {
+				return url.replace(/^(https?:\/\/)?(www\.)?/, "");
+			};
+
+			if (id === "github" || id === "linkedin") {
+				setCvData((data) => ({ ...data, [id]: cleanUrl(value) }));
 			}
 		},
 		[setCvData],
@@ -96,6 +111,26 @@ function DataForm({ cvData, setCvData }) {
 				value={cvData.location}
 				onChange={(e) =>
 					setCvData((data) => ({ ...data, location: e.target.value }))
+				}
+				type="text"
+			/>
+			<FormInput
+				name="github"
+				label="github"
+				onBlur={handleBlur}
+				value={cvData.github}
+				onChange={(e) =>
+					setCvData((data) => ({ ...data, github: e.target.value }))
+				}
+				type="text"
+			/>
+			<FormInput
+				name="linkedin"
+				label="linkedin"
+				onBlur={handleBlur}
+				value={cvData.linkedin}
+				onChange={(e) =>
+					setCvData((data) => ({ ...data, linkedin: e.target.value }))
 				}
 				type="text"
 			/>
