@@ -5,7 +5,7 @@ import { ActionsBar } from "./components/Aside/ActionsBar";
 import { ModeToggle } from "./components/Aside/ModeToggle";
 import { SideContainer } from "./components/Aside/SideContainer";
 import { ContentEditor } from "./components/Aside/ContentEditor";
-import { DUMMY_DATA, EDITOR_MODES } from "./lib/constants";
+import { CV_FONTS, DUMMY_DATA, EDITOR_MODES } from "./lib/constants";
 import { StyleEditor } from "./components/Aside/StyleEditor";
 
 function Container({ children }) {
@@ -19,6 +19,7 @@ function Container({ children }) {
 function App() {
 	const [currentMode, setMode] = useState(EDITOR_MODES.contentEditor);
 	const [cvData, setCvData] = useState(DUMMY_DATA);
+	const [cvFont, setCvFont] = useState(CV_FONTS.serif);
 
 	return (
 		<Container>
@@ -28,11 +29,11 @@ function App() {
 				{currentMode === EDITOR_MODES.contentEditor ? (
 					<ContentEditor cvData={cvData} setCvData={setCvData} />
 				) : (
-					<StyleEditor />
+					<StyleEditor setCvFont={setCvFont} />
 				)}
 			</SideContainer>
 
-			<CurriculumVitaeContainer cvData={cvData} />
+			<CurriculumVitaeContainer cvData={cvData} cvFont={cvFont} />
 		</Container>
 	);
 }

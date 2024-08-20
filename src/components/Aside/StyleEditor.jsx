@@ -1,4 +1,4 @@
-function StyleEditor() {
+function StyleEditor({ setCvFont }) {
 	return <h1>Placeholder</h1>;
 }
 
