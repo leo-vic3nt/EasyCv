@@ -27,7 +27,7 @@ function Header({ cvData, cvFont }) {
 			<div className="flex gap-5">
 				<div className="flex items-center gap-1">
 					<img
-						src="public/github-142-svgrepo-com.svg"
+						src="/github-142-svgrepo-com.svg"
 						alt="github icon"
 						className="size-5"
 					/>
@@ -35,7 +35,7 @@ function Header({ cvData, cvFont }) {
 				</div>
 				<div className="flex items-center gap-1">
 					<img
-						src="public/linkedin-svgrepo-com.svg"
+						src="/linkedin-svgrepo-com.svg"
 						alt="linkedin icon"
 						className="size-5"
 					/>
