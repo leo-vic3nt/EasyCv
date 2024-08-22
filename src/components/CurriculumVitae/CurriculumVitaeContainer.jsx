@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { Header } from "./Header";
+import { Education } from "./Education";
 
 function CurriculumVitaeContainer({ cvData, cvFont }) {
 	return (
@@ -10,6 +11,7 @@ function CurriculumVitaeContainer({ cvData, cvFont }) {
 			)}
 		>
 			<Header cvData={cvData} cvFont={cvFont} />
+			<Education />
 		</div>
 	);
 }
