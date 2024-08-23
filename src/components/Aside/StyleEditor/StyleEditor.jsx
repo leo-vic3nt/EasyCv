@@ -1,15 +1,16 @@
 import { SideCard } from "../SideCard";
-import { ChatBubbleBottomCenterTextIcon } from "@heroicons/react/24/outline";
+import { Colors } from "./Color";
 import { Fonts } from "./Fonts";
 
-function StyleEditor({ cvFont, setCvFont }) {
+function StyleEditor({ cvFont, setCvFont, cvAccentColor, setCvAccentColor }) {
 	return (
-		<SideCard
-			title={"Fonts"}
-			icon={<ChatBubbleBottomCenterTextIcon className="stroke-1" />}
-		>
+		<>
 			<Fonts cvFont={cvFont} setCvFont={setCvFont} />
-		</SideCard>
+			<Colors
+				setCvAccentColor={setCvAccentColor}
+				cvAccentColor={cvAccentColor}
+			/>
+		</>
 	);
 }
 

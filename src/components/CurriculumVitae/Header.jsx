@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-function Header({ cvData, cvFont }) {
+function Header({ cvData, cvFont, cvAccentColor }) {
 	const { fullName, phoneNumber, location, email, github, linkedin } = cvData;
 
 	return (
@@ -10,6 +10,7 @@ function Header({ cvData, cvFont }) {
 					"font-semibold",
 					cvFont === "font-serif" ? "text-5xl" : "text-4xl",
 				)}
+				style={{ color: cvAccentColor }}
 			>
 				{fullName}
 			</h1>

@@ -20,6 +20,7 @@ function App() {
 	const [currentMode, setMode] = useState(EDITOR_MODES.contentEditor);
 	const [cvData, setCvData] = useState(DUMMY_DATA);
 	const [cvFont, setCvFont] = useState(CV_FONTS.serif);
+	const [cvAccentColor, setCvAccentColor] = useState("#000000");
 
 	return (
 		<Container>
@@ -29,11 +30,20 @@ function App() {
 				{currentMode === EDITOR_MODES.contentEditor ? (
 					<ContentEditor cvData={cvData} setCvData={setCvData} />
 				) : (
-					<StyleEditor setCvFont={setCvFont} cvFont={cvFont} />
+					<StyleEditor
+						setCvFont={setCvFont}
+						cvFont={cvFont}
+						setCvAccentColor={setCvAccentColor}
+						cvAccentColor={cvAccentColor}
+					/>
 				)}
 			</SideContainer>
 
-			<CurriculumVitaeContainer cvData={cvData} cvFont={cvFont} />
+			<CurriculumVitaeContainer
+				cvData={cvData}
+				cvFont={cvFont}
+				cvAccentColor={cvAccentColor}
+			/>
 		</Container>
 	);
 }
