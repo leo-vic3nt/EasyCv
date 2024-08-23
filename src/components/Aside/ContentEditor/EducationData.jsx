@@ -1,4 +1,4 @@
-import { SideCard } from "./SideCard";
+import { SideCard } from "../SideCard";
 import { AcademicCapIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { AddDataBtn } from "./AddDataBtn";

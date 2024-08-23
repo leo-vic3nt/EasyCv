@@ -4,9 +4,9 @@ import { CurriculumVitaeContainer } from "./components/CurriculumVitae/Curriculu
 import { ActionsBar } from "./components/Aside/ActionsBar";
 import { ModeToggle } from "./components/Aside/ModeToggle";
 import { SideContainer } from "./components/Aside/SideContainer";
-import { ContentEditor } from "./components/Aside/ContentEditor";
+import { ContentEditor } from "./components/Aside/ContentEditor/ContentEditor";
 import { CV_FONTS, DUMMY_DATA, EDITOR_MODES } from "./lib/constants";
-import { StyleEditor } from "./components/Aside/StyleEditor";
+import { StyleEditor } from "./components/Aside/StyleEditor/StyleEditor";
 
 function Container({ children }) {
 	return (
@@ -29,7 +29,7 @@ function App() {
 				{currentMode === EDITOR_MODES.contentEditor ? (
 					<ContentEditor cvData={cvData} setCvData={setCvData} />
 				) : (
-					<StyleEditor setCvFont={setCvFont} />
+					<StyleEditor setCvFont={setCvFont} cvFont={cvFont} />
 				)}
 			</SideContainer>
 

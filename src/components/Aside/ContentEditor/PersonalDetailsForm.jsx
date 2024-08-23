@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useCallback } from "react";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
-import { DUMMY_DATA } from "../../lib/constants";
-import { SideCard } from "./SideCard";
+import { DUMMY_DATA } from "../../../lib/constants";
+import { SideCard } from "../SideCard";
 
 function FormInput({ name, label, value, onChange, onBlur, type }) {
 	return (
