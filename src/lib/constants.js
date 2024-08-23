@@ -19,4 +19,9 @@ const CV_FONTS = {
 	mono: "font-mono",
 };
 
-export { DUMMY_DATA, EDITOR_MODES, CV_FONTS };
+const CV_LANGUAGES = {
+	pt: "pt",
+	en: "en",
+};
+
+export { DUMMY_DATA, EDITOR_MODES, CV_FONTS, CV_LANGUAGES };

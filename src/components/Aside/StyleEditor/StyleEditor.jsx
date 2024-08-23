@@ -1,8 +1,15 @@
-import { SideCard } from "../SideCard";
 import { Colors } from "./Color";
 import { Fonts } from "./Fonts";
+import { Languages } from "./Language";
 
-function StyleEditor({ cvFont, setCvFont, cvAccentColor, setCvAccentColor }) {
+function StyleEditor({
+	cvFont,
+	setCvFont,
+	cvAccentColor,
+	setCvAccentColor,
+	cvLanguage,
+	setCvLanguage,
+}) {
 	return (
 		<>
 			<Fonts cvFont={cvFont} setCvFont={setCvFont} />
@@ -10,6 +17,7 @@ function StyleEditor({ cvFont, setCvFont, cvAccentColor, setCvAccentColor }) {
 				setCvAccentColor={setCvAccentColor}
 				cvAccentColor={cvAccentColor}
 			/>
+			<Languages cvLanguage={cvLanguage} setCvLanguage={setCvLanguage} />
 		</>
 	);
 }

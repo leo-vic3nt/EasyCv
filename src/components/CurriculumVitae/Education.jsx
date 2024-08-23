@@ -1,11 +1,11 @@
-function Education({ cvAccentColor }) {
+function Education({ cvAccentColor, cvLanguage }) {
 	return (
 		<div>
 			<h1
 				className="border-black border-b-2 font-extrabold text-2xl uppercase"
 				style={{ color: cvAccentColor, borderColor: cvAccentColor }}
 			>
-				education
+				{cvLanguage === "en" ? "education" : "formação acadêmica"}
 			</h1>
 		</div>
 	);

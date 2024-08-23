@@ -5,7 +5,12 @@ import { ActionsBar } from "./components/Aside/ActionsBar";
 import { ModeToggle } from "./components/Aside/ModeToggle";
 import { SideContainer } from "./components/Aside/SideContainer";
 import { ContentEditor } from "./components/Aside/ContentEditor/ContentEditor";
-import { CV_FONTS, DUMMY_DATA, EDITOR_MODES } from "./lib/constants";
+import {
+	CV_FONTS,
+	DUMMY_DATA,
+	EDITOR_MODES,
+	CV_LANGUAGES,
+} from "./lib/constants";
 import { StyleEditor } from "./components/Aside/StyleEditor/StyleEditor";
 
 function Container({ children }) {
@@ -21,6 +26,7 @@ function App() {
 	const [cvData, setCvData] = useState(DUMMY_DATA);
 	const [cvFont, setCvFont] = useState(CV_FONTS.serif);
 	const [cvAccentColor, setCvAccentColor] = useState("#000000");
+	const [cvLanguage, setCvLanguage] = useState(CV_LANGUAGES.pt);
 
 	return (
 		<Container>
@@ -35,6 +41,8 @@ function App() {
 						cvFont={cvFont}
 						setCvAccentColor={setCvAccentColor}
 						cvAccentColor={cvAccentColor}
+						cvLanguage={cvLanguage}
+						setCvLanguage={setCvLanguage}
 					/>
 				)}
 			</SideContainer>
@@ -43,6 +51,7 @@ function App() {
 				cvData={cvData}
 				cvFont={cvFont}
 				cvAccentColor={cvAccentColor}
+				cvLanguage={cvLanguage}
 			/>
 		</Container>
 	);

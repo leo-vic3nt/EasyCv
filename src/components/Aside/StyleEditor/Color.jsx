@@ -1,14 +1,17 @@
 import { SideCard } from "../SideCard";
 import { PaintBrushIcon } from "@heroicons/react/24/outline";
 
-function Colors({ setCvAccentColor, cvAccentColor }) {
+function Colors({ setCvAccentColor, cvAccentColor, cvLanguage }) {
 	const handleColorChange = (event) => {
 		setCvAccentColor(event.target.value);
 	};
 
 	return (
 		<SideCard title={"Color"} icon={<PaintBrushIcon className="stroke-1" />}>
-			<label htmlFor="accentColor" className="flex items-center gap-3 text-lg">
+			<label
+				htmlFor="accentColor"
+				className="flex items-center gap-3 text-lg px-3"
+			>
 				Accent Color
 				<input
 					type="color"

@@ -8,7 +8,7 @@ function FontBtn({ setCvFont, fontToSet, isActive }) {
 		<button
 			type="button"
 			className={clsx(
-				"min-w-16 rounded-lg border-[1px] border-black py-2 ",
+				"min-w-16 rounded-lg border-0 active:border-0 ",
 				fontToSet ? `font-${fontToSet}` : "",
 				isActive && "bg-gray-200",
 			)}
