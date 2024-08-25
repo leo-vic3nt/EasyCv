@@ -26,7 +26,7 @@ function App() {
 	const [cvData, setCvData] = useState(DUMMY_DATA);
 	const [cvFont, setCvFont] = useState(CV_FONTS.serif);
 	const [cvAccentColor, setCvAccentColor] = useState("#000000");
-	const [cvLanguage, setCvLanguage] = useState(CV_LANGUAGES.pt);
+	const [cvLanguage, setCvLanguage] = useState(CV_LANGUAGES.en);
 
 	return (
 		<Container>
