@@ -12,6 +12,8 @@ const DUMMY_DATA = {
 		github: "github.com/leo-vic3nt",
 		linkedin: "linkedin.com/in/leonardo-vic3nte/",
 	},
+
+	// @todo education
 };
 
 // Using tailwind classes

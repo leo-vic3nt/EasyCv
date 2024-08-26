@@ -26,6 +26,9 @@ function App() {
 	const [personalDetailsData, setPersonalsDetailsData] = useState(
 		DUMMY_DATA.personalInfo,
 	);
+	const [educationData, setEducationData] = useState([
+		DUMMY_DATA.educationData,
+	]);
 	const [cvFont, setCvFont] = useState(CV_FONTS.serif);
 	const [cvAccentColor, setCvAccentColor] = useState("#000000");
 	const [cvLanguage, setCvLanguage] = useState(CV_LANGUAGES.en);
@@ -37,8 +40,10 @@ function App() {
 				<ModeToggle setMode={setMode} />
 				{currentMode === EDITOR_MODES.contentEditor ? (
 					<ContentEditor
-						cvData={personalDetailsData}
-						setCvData={setPersonalsDetailsData}
+						personalDetailsData={personalDetailsData}
+						setPersonalsDetailsData={setPersonalsDetailsData}
+						educationData={educationData}
+						setEducationData={setEducationData}
 					/>
 				) : (
 					<StyleEditor

@@ -9,60 +9,61 @@ function FormInput({ name, label, value, onChange, onBlur, type }) {
 		<div className="mb-4">
 			<label
 				htmlFor={name}
-				className="mb-2 block font-medium capitalize text-gray-700"
+				className="mb-2 block font-medium text-gray-700 capitalize"
 			>
 				{label}
 			</label>
 			<input
 				type={type}
 				id={name}
-				className="focus:shadow-outline w-full appearance-none rounded-xl bg-gray-100 px-3 py-2 leading-tight focus:outline-none"
+				className="w-full appearance-none rounded-xl bg-gray-100 px-3 py-2 leading-tight focus:shadow-outline focus:outline-none"
 				value={value}
 				onChange={onChange}
 				onBlur={onBlur}
+				maxLength={label.toLowerCase() === "full name" ? 20 : 40}
 			/>
 		</div>
 	);
 }
 
-function DataForm({ cvData, setCvData }) {
+function DataForm({ personalDetailsData, setPersonalsDetailsData }) {
 	const handleBlur = useCallback(
 		(e) => {
 			const { id, value } = e.target;
 			if (value === "") {
 				switch (id) {
 					case "fullName":
-						setCvData((data) => ({
+						setPersonalsDetailsData((data) => ({
 							...data,
 							fullName: DUMMY_DATA.personalInfo.fullName,
 						}));
 						break;
 					case "phoneNumber":
-						setCvData((data) => ({
+						setPersonalsDetailsData((data) => ({
 							...data,
 							phoneNumber: DUMMY_DATA.personalInfo.phoneNumber,
 						}));
 						break;
 					case "email":
-						setCvData((data) => ({
+						setPersonalsDetailsData((data) => ({
 							...data,
 							email: DUMMY_DATA.personalInfo.email,
 						}));
 						break;
 					case "location":
-						setCvData((data) => ({
+						setPersonalsDetailsData((data) => ({
 							...data,
 							location: DUMMY_DATA.personalInfo.location,
 						}));
 						break;
 					case "github":
-						setCvData((data) => ({
+						setPersonalsDetailsData((data) => ({
 							...data,
 							github: DUMMY_DATA.personalInfo.github,
 						}));
 						break;
 					case "linkedin":
-						setCvData((data) => ({
+						setPersonalsDetailsData((data) => ({
 							...data,
 							linkedin: DUMMY_DATA.personalInfo.linkedin,
 						}));
@@ -78,10 +79,10 @@ function DataForm({ cvData, setCvData }) {
 			};
 
 			if (id === "github" || id === "linkedin") {
-				setCvData((data) => ({ ...data, [id]: cleanUrl(value) }));
+				setPersonalsDetailsData((data) => ({ ...data, [id]: cleanUrl(value) }));
 			}
 		},
-		[setCvData],
+		[setPersonalsDetailsData],
 	);
 
 	return (
@@ -90,9 +91,12 @@ function DataForm({ cvData, setCvData }) {
 				name="fullName"
 				label="full name"
 				onBlur={handleBlur}
-				value={cvData.fullName}
+				value={personalDetailsData.fullName}
 				onChange={(e) =>
-					setCvData((data) => ({ ...data, fullName: e.target.value }))
+					setPersonalsDetailsData((data) => ({
+						...data,
+						fullName: e.target.value,
+					}))
 				}
 				type="text"
 			/>
@@ -101,9 +105,12 @@ function DataForm({ cvData, setCvData }) {
 				name="phoneNumber"
 				label="phone number"
 				onBlur={handleBlur}
-				value={cvData.phoneNumber}
+				value={personalDetailsData.phoneNumber}
 				onChange={(e) =>
-					setCvData((data) => ({ ...data, phoneNumber: e.target.value }))
+					setPersonalsDetailsData((data) => ({
+						...data,
+						phoneNumber: e.target.value,
+					}))
 				}
 				type="tel"
 			/>
@@ -112,9 +119,12 @@ function DataForm({ cvData, setCvData }) {
 				name="email"
 				label="email"
 				onBlur={handleBlur}
-				value={cvData.email}
+				value={personalDetailsData.email}
 				onChange={(e) =>
-					setCvData((data) => ({ ...data, email: e.target.value }))
+					setPersonalsDetailsData((data) => ({
+						...data,
+						email: e.target.value,
+					}))
 				}
 				type="email"
 			/>
@@ -123,9 +133,12 @@ function DataForm({ cvData, setCvData }) {
 				name="location"
 				label="location"
 				onBlur={handleBlur}
-				value={cvData.location}
+				value={personalDetailsData.location}
 				onChange={(e) =>
-					setCvData((data) => ({ ...data, location: e.target.value }))
+					setPersonalsDetailsData((data) => ({
+						...data,
+						location: e.target.value,
+					}))
 				}
 				type="text"
 			/>
@@ -133,9 +146,12 @@ function DataForm({ cvData, setCvData }) {
 				name="github"
 				label="github"
 				onBlur={handleBlur}
-				value={cvData.github}
+				value={personalDetailsData.github}
 				onChange={(e) =>
-					setCvData((data) => ({ ...data, github: e.target.value }))
+					setPersonalsDetailsData((data) => ({
+						...data,
+						github: e.target.value,
+					}))
 				}
 				type="text"
 			/>
@@ -143,9 +159,12 @@ function DataForm({ cvData, setCvData }) {
 				name="linkedin"
 				label="linkedin"
 				onBlur={handleBlur}
-				value={cvData.linkedin}
+				value={personalDetailsData.linkedin}
 				onChange={(e) =>
-					setCvData((data) => ({ ...data, linkedin: e.target.value }))
+					setPersonalsDetailsData((data) => ({
+						...data,
+						linkedin: e.target.value,
+					}))
 				}
 				type="text"
 			/>
@@ -153,13 +172,16 @@ function DataForm({ cvData, setCvData }) {
 	);
 }
 
-function PersonalDetailsForm({ cvData, setCvData }) {
+function PersonalDetailsForm({ personalDetailsData, setPersonalsDetailsData }) {
 	return (
 		<SideCard
 			title={"personal details"}
 			icon={<UserCircleIcon className="stroke-1" />}
 		>
-			<DataForm cvData={cvData} setCvData={setCvData} />
+			<DataForm
+				personalDetailsData={personalDetailsData}
+				setPersonalsDetailsData={setPersonalsDetailsData}
+			/>
 		</SideCard>
 	);
 }

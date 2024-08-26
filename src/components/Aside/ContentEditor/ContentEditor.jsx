@@ -2,11 +2,22 @@
 import { EducationData } from "./EducationData";
 import { PersonalDetailsForm } from "./PersonalDetailsForm";
 
-function ContentEditor({ cvData, setCvData }) {
+function ContentEditor({
+	personalDetailsData,
+	setPersonalsDetailsData,
+	educationData,
+	setEducationData,
+}) {
 	return (
 		<>
-			<PersonalDetailsForm cvData={cvData} setCvData={setCvData} />
-			<EducationData cvData={cvData} setCvData={setCvData} />
+			<PersonalDetailsForm
+				personalDetailsData={personalDetailsData}
+				setPersonalsDetailsData={setPersonalsDetailsData}
+			/>
+			<EducationData
+				cvData={educationData}
+				setPersonalsDetailsData={setEducationData}
+			/>
 		</>
 	);
 }

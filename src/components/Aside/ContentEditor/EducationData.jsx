@@ -40,7 +40,7 @@ function DataList({ children }) {
 	return <div>{children}</div>;
 }
 
-function EducationData({ cvData, setCvData }) {
+function EducationData({ educationData, setEducationData }) {
 	const [formActive, setFormActive] = useState(false);
 
 	return (
