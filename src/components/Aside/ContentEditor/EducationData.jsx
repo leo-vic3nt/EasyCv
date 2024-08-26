@@ -27,9 +27,12 @@ function FormInput({ name, label, value, onChange, type }) {
 
 function DataForm({ cvData, setCvData }) {
 	return (
-		<div className="">
-			<h1>Teste</h1>
-		</div>
+		<form className="">
+			<FormInput name="school" label="School / Institution"  />
+			<FormInput name="school" label="School / Institution" />
+			<FormInput name="school" label="School / Institution" />
+			<FormInput name="school" label="School / Institution" />
+		</form>
 	);
 }
 

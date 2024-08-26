@@ -23,7 +23,9 @@ function Container({ children }) {
 
 function App() {
 	const [currentMode, setMode] = useState(EDITOR_MODES.contentEditor);
-	const [cvData, setCvData] = useState(DUMMY_DATA);
+	const [personalDetailsData, setPersonalsDetailsData] = useState(
+		DUMMY_DATA.personalInfo,
+	);
 	const [cvFont, setCvFont] = useState(CV_FONTS.serif);
 	const [cvAccentColor, setCvAccentColor] = useState("#000000");
 	const [cvLanguage, setCvLanguage] = useState(CV_LANGUAGES.en);
@@ -34,7 +36,10 @@ function App() {
 				<ActionsBar />
 				<ModeToggle setMode={setMode} />
 				{currentMode === EDITOR_MODES.contentEditor ? (
-					<ContentEditor cvData={cvData} setCvData={setCvData} />
+					<ContentEditor
+						cvData={personalDetailsData}
+						setCvData={setPersonalsDetailsData}
+					/>
 				) : (
 					<StyleEditor
 						setCvFont={setCvFont}
@@ -48,7 +53,7 @@ function App() {
 			</SideContainer>
 
 			<CurriculumVitaeContainer
-				cvData={cvData}
+				cvData={personalDetailsData}
 				cvFont={cvFont}
 				cvAccentColor={cvAccentColor}
 				cvLanguage={cvLanguage}

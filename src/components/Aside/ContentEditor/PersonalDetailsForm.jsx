@@ -32,25 +32,40 @@ function DataForm({ cvData, setCvData }) {
 			if (value === "") {
 				switch (id) {
 					case "fullName":
-						setCvData((data) => ({ ...data, fullName: DUMMY_DATA.fullName }));
+						setCvData((data) => ({
+							...data,
+							fullName: DUMMY_DATA.personalInfo.fullName,
+						}));
 						break;
 					case "phoneNumber":
 						setCvData((data) => ({
 							...data,
-							phoneNumber: DUMMY_DATA.phoneNumber,
+							phoneNumber: DUMMY_DATA.personalInfo.phoneNumber,
 						}));
 						break;
 					case "email":
-						setCvData((data) => ({ ...data, email: DUMMY_DATA.email }));
+						setCvData((data) => ({
+							...data,
+							email: DUMMY_DATA.personalInfo.email,
+						}));
 						break;
 					case "location":
-						setCvData((data) => ({ ...data, location: DUMMY_DATA.location }));
+						setCvData((data) => ({
+							...data,
+							location: DUMMY_DATA.personalInfo.location,
+						}));
 						break;
 					case "github":
-						setCvData((data) => ({ ...data, github: DUMMY_DATA.github }));
+						setCvData((data) => ({
+							...data,
+							github: DUMMY_DATA.personalInfo.github,
+						}));
 						break;
 					case "linkedin":
-						setCvData((data) => ({ ...data, linkedin: DUMMY_DATA.linkedin }));
+						setCvData((data) => ({
+							...data,
+							linkedin: DUMMY_DATA.personalInfo.linkedin,
+						}));
 						break;
 					default:
 						break;
