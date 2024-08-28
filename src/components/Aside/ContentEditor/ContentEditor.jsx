@@ -15,8 +15,8 @@ function ContentEditor({
 				setPersonalsDetailsData={setPersonalsDetailsData}
 			/>
 			<EducationData
-				cvData={educationData}
-				setPersonalsDetailsData={setEducationData}
+				educationData={educationData}
+				setEducationData={setEducationData}
 			/>
 		</>
 	);
