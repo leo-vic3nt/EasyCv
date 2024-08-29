@@ -7,6 +7,7 @@ function CurriculumVitaeContainer({
 	cvFont,
 	cvAccentColor,
 	cvLanguage,
+	educationData,
 }) {
 	return (
 		<div
@@ -16,7 +17,11 @@ function CurriculumVitaeContainer({
 			)}
 		>
 			<Header cvData={cvData} cvFont={cvFont} cvAccentColor={cvAccentColor} />
-			<Education cvAccentColor={cvAccentColor} cvLanguage={cvLanguage} />
+			<Education
+				cvAccentColor={cvAccentColor}
+				cvLanguage={cvLanguage}
+				educationData={educationData}
+			/>
 		</div>
 	);
 }

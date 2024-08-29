@@ -1,0 +1,3 @@
+function DataItem({}) {}
+
+export { DataItem };

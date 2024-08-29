@@ -13,6 +13,16 @@ const DUMMY_DATA = {
 		linkedin: "linkedin.com/in/leonardo-vic3nte/",
 	},
 
+	educationData: [
+		{
+			school: "Universidade de Fortaleza",
+			degree: "Bachelor in Computer Science",
+			startDate: "08/2022",
+			endDate: "Present",
+			location: "Fortaleza, Brazil",
+		},
+	],
+
 	// @todo education
 };
 

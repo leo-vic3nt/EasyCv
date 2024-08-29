@@ -26,9 +26,7 @@ function App() {
 	const [personalDetailsData, setPersonalsDetailsData] = useState(
 		DUMMY_DATA.personalInfo,
 	);
-	const [educationData, setEducationData] = useState([
-		DUMMY_DATA.educationData,
-	]);
+	const [educationData, setEducationData] = useState(DUMMY_DATA.educationData);
 	const [cvFont, setCvFont] = useState(CV_FONTS.serif);
 	const [cvAccentColor, setCvAccentColor] = useState("#000000");
 	const [cvLanguage, setCvLanguage] = useState(CV_LANGUAGES.en);
@@ -62,6 +60,7 @@ function App() {
 				cvFont={cvFont}
 				cvAccentColor={cvAccentColor}
 				cvLanguage={cvLanguage}
+				educationData={educationData}
 			/>
 		</Container>
 	);

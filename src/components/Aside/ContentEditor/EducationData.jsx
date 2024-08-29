@@ -65,10 +65,6 @@ function DataForm({ educationData, setEducationData, setFormActive }) {
 	);
 }
 
-function DataList({ children }) {
-	return <div>{children}</div>;
-}
-
 function EducationData({ educationData, setEducationData }) {
 	const [formActive, setFormActive] = useState(false);
 
@@ -83,9 +79,10 @@ function EducationData({ educationData, setEducationData }) {
 					setFormActive={setFormActive}
 				/>
 			) : (
-				<DataList>
-					<h1>Hey</h1> <AddDataBtn onCLick={() => setFormActive(true)} />
-				</DataList>
+				<ul>
+					<h1>Hey</h1>
+					<AddDataBtn onCLick={() => setFormActive(true)} />
+				</ul>
 			)}
 		</SideCard>
 	);
