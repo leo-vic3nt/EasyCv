@@ -1,13 +1,26 @@
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-function EducationItem({ school, degree, startDate, endDate, location }) {
+function EducationItem({
+	school,
+	degree,
+	startDate,
+	endDate,
+	location,
+	additionalInfo = [],
+}) {
 	return (
 		<div>
 			<div className="flex justify-between px-2 text-lg">
 				<div>
 					<p className="font-bold">{degree}</p>
 					<p>{school}</p>
+					<ul className="list-disc px-6">
+						{additionalInfo.map((item, index) => (
+							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+							<li key={index}>{item}</li>
+						))}
+					</ul>
 				</div>
 				<div className="text-center">
 					<p className="font-bold">{`${startDate} - ${endDate}`}</p>
@@ -51,6 +64,7 @@ function Education({ cvAccentColor, cvLanguage, educationData }) {
 					startDate={item.startDate}
 					endDate={item.endDate}
 					location={item.location}
+					additionalInfo={item.additionalInfo}
 				/>
 			))}
 		</div>

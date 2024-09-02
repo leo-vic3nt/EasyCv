@@ -20,6 +20,7 @@ const DUMMY_DATA = {
 			startDate: "08/2022",
 			endDate: "Present",
 			location: "Fortaleza, Brazil",
+			additionalInfo: ["GPA: 3.4/4.0"],
 		},
 	],
 };

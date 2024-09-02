@@ -3,8 +3,6 @@ import { AcademicCapIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { AddDataBtn } from "./AddDataBtn";
 
-
-
 function FormInput({ name, label, value, onChange, type }) {
 	return (
 		<div className="mb-4 w-full">
@@ -14,18 +12,26 @@ function FormInput({ name, label, value, onChange, type }) {
 			>
 				{label}
 			</label>
-			<input
-				type={type}
-				id={name}
-				className="w-full appearance-none rounded-xl bg-gray-100 px-3 py-2 leading-tight focus:shadow-outline focus:outline-none"
-				value={value}
-				onChange={onChange}
-			/>
+			<div className="flex gap-3">
+				<input
+					type={type}
+					id={name}
+					className="w-full appearance-none rounded-xl bg-gray-100 px-3 py-2 leading-tight focus:shadow-outline focus:outline-none"
+					value={value}
+					onChange={onChange}
+				/>
+				{name === "aditionalInfo" && (
+					<button
+						type="button"
+						className="rounded-lg bg-slate-400 px-2 py-1 text-white transition-all duration-200 active:translate-y-1"
+					>
+						Add
+					</button>
+				)}{" "}
+			</div>
 		</div>
 	);
 }
-
-1;
 
 function DataForm({ educationData, setEducationData, setFormActive }) {
 	function handleSubmit(event) {
@@ -33,8 +39,13 @@ function DataForm({ educationData, setEducationData, setFormActive }) {
 		setFormActive(false);
 	}
 
+	
+
 	return (
 		<form>
+			{
+				// @todo Implement all onChange to set the education data on these form inputs
+			}
 			<FormInput name="school" label="School / Institution" type="text" />
 			<FormInput name="degree" label="Degree" type="text" />
 
@@ -43,7 +54,12 @@ function DataForm({ educationData, setEducationData, setFormActive }) {
 				<FormInput name="endDate" label="End Date" type="text1" />
 			</div>
 
-			<FormInput name="location" label="location" />
+			<FormInput name="location" label="location" type="text" />
+			<FormInput
+				name="aditionalInfo"
+				label="aditional information"
+				optional={true}
+			/>
 
 			<div className="flex gap-3">
 				<button
