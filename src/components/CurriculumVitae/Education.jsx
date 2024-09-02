@@ -4,14 +4,14 @@ import { v4 as uuidv4 } from "uuid";
 function EducationItem({ school, degree, startDate, endDate, location }) {
 	return (
 		<div>
-			<div className="flex gap-20 text-lg">
-				<div className="flex w-fit flex-col items-center">
+			<div className="flex justify-between px-2 text-lg">
+				<div>
+					<p className="font-bold">{degree}</p>
+					<p>{school}</p>
+				</div>
+				<div className="text-center">
 					<p className="font-bold">{`${startDate} - ${endDate}`}</p>
 					<p>{location}</p>
-				</div>
-				<div>
-					<p className="font-bold">{school}</p>
-					<p>{degree}</p>
 				</div>
 			</div>
 		</div>

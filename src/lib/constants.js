@@ -22,8 +22,6 @@ const DUMMY_DATA = {
 			location: "Fortaleza, Brazil",
 		},
 	],
-
-	// @todo education
 };
 
 // Using tailwind classes

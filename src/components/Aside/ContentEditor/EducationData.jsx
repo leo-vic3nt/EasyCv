@@ -3,7 +3,7 @@ import { AcademicCapIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { AddDataBtn } from "./AddDataBtn";
 
-// @todo add education list item and form for add data
+
 
 function FormInput({ name, label, value, onChange, type }) {
 	return (
