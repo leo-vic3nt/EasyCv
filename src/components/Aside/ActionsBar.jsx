@@ -19,7 +19,7 @@ function ControlButton({ children, customStyle = null }) {
 		<button
 			type="button"
 			className={clsx(
-				"flex w-1/2 items-center justify-center gap-1 rounded-xl px-1 py-3 font-bold capitalize hover:bg-gray-200 active:scale-95",
+				"flex w-full items-center justify-center gap-1 rounded-xl px-1 py-3 font-bold capitalize hover:bg-gray-200 active:scale-95",
 				customStyle,
 			)}
 		>
