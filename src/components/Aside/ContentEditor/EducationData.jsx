@@ -19,6 +19,7 @@ function FormInput({ name, label, value, onChange, type }) {
 					className="w-full appearance-none rounded-xl bg-gray-100 px-3 py-2 leading-tight focus:shadow-outline focus:outline-none"
 					value={value}
 					onChange={onChange}
+					required={true}
 				/>
 				{name === "aditionalInfo" && (
 					<button
@@ -27,22 +28,22 @@ function FormInput({ name, label, value, onChange, type }) {
 					>
 						Add
 					</button>
-				)}{" "}
+				)}
 			</div>
 		</div>
 	);
 }
 
-function DataForm({ educationData, setEducationData, setFormActive }) {
+function DataForm({ setEducationData, setFormActive }) {
+	const [newEducationItem, setNewEducationItem] = useState({});
+
 	function handleSubmit(event) {
 		event.preventDefault();
 		setFormActive(false);
 	}
 
-	
-
 	return (
-		<form>
+		<form onSubmit={handleSubmit}>
 			{
 				// @todo Implement all onChange to set the education data on these form inputs
 			}
@@ -65,7 +66,6 @@ function DataForm({ educationData, setEducationData, setFormActive }) {
 				<button
 					className="rounded-lg bg-blue-500 px-3 py-1 text-white transition-all duration-200 active:translate-y-1"
 					type="submit"
-					onClick={handleSubmit}
 				>
 					Save
 				</button>
@@ -81,7 +81,7 @@ function DataForm({ educationData, setEducationData, setFormActive }) {
 	);
 }
 
-function EducationData({ educationData, setEducationData }) {
+function EducationData({ setEducationData }) {
 	const [formActive, setFormActive] = useState(false);
 
 	return (

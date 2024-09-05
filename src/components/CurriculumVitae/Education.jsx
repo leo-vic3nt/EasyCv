@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 function EducationItem({
 	school,
@@ -43,20 +41,12 @@ function Header({ cvAccentColor, cvLanguage }) {
 }
 
 function Education({ cvAccentColor, cvLanguage, educationData }) {
-	const [dataWithIds, setDataWithIds] = useState([]);
 
-	useEffect(() => {
-		const data = educationData.map((item) => ({
-			...item,
-			id: uuidv4(),
-		}));
-		setDataWithIds(data);
-	}, [educationData]);
 
 	return (
 		<div>
 			<Header cvAccentColor={cvAccentColor} cvLanguage={cvLanguage} />
-			{dataWithIds.map((item) => (
+			{educationData.map((item) => (
 				<EducationItem
 					key={item.id}
 					school={item.school}

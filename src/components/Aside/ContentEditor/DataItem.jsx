@@ -1,3 +1,5 @@
-function DataItem({}) {}
+function DataItem({data}) {
+    
+}
 
 export { DataItem };

@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 const EDITOR_MODES = Object.freeze({
 	contentEditor: 1,
 	customize: 2,
@@ -15,6 +17,7 @@ const DUMMY_DATA = {
 
 	educationData: [
 		{
+			id: uuidv4(),
 			school: "Universidade de Fortaleza",
 			degree: "Bachelor in Computer Science",
 			startDate: "08/2022",
