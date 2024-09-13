@@ -2,6 +2,8 @@ import { SideCard } from "../SideCard";
 import { AcademicCapIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { AddDataBtn } from "./AddDataBtn";
+import { DataItem } from "./DataItem";
+import { DATAITEM_TYPES } from "../../../lib/constants";
 
 function FormInput({ name, label, value, onChange, type }) {
 	return (
@@ -81,7 +83,7 @@ function DataForm({ setEducationData, setFormActive }) {
 	);
 }
 
-function EducationData({ setEducationData }) {
+function EducationData({ educationData, setEducationData }) {
 	const [formActive, setFormActive] = useState(false);
 
 	return (
@@ -96,7 +98,14 @@ function EducationData({ setEducationData }) {
 				/>
 			) : (
 				<ul>
-					<h1>Hey</h1>
+					{educationData.map((item) => (
+						<DataItem
+							data={item}
+							type={DATAITEM_TYPES.school}
+							setEducationData={setEducationData}
+							key={item.id}
+						/>
+					))}
 					<AddDataBtn onCLick={() => setFormActive(true)} />
 				</ul>
 			)}

@@ -28,6 +28,11 @@ const DUMMY_DATA = {
 	],
 };
 
+const DATAITEM_TYPES = {
+	school: "school",
+	work: "work",
+};
+
 // Using tailwind classes
 const CV_FONTS = {
 	sans: "font-sans",
@@ -40,4 +45,4 @@ const CV_LANGUAGES = {
 	en: "en",
 };
 
-export { DUMMY_DATA, EDITOR_MODES, CV_FONTS, CV_LANGUAGES };
+export { DATAITEM_TYPES, DUMMY_DATA, EDITOR_MODES, CV_FONTS, CV_LANGUAGES };
