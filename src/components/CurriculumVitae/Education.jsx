@@ -1,4 +1,3 @@
-
 function EducationItem({
 	school,
 	degree,
@@ -41,22 +40,22 @@ function Header({ cvAccentColor, cvLanguage }) {
 }
 
 function Education({ cvAccentColor, cvLanguage, educationData }) {
-
-
 	return (
 		<div>
 			<Header cvAccentColor={cvAccentColor} cvLanguage={cvLanguage} />
-			{educationData.map((item) => (
-				<EducationItem
-					key={item.id}
-					school={item.school}
-					degree={item.degree}
-					startDate={item.startDate}
-					endDate={item.endDate}
-					location={item.location}
-					additionalInfo={item.additionalInfo}
-				/>
-			))}
+			<div className="flex flex-col gap-3">
+				{educationData.map((item) => (
+					<EducationItem
+						key={item.id}
+						school={item.school}
+						degree={item.degree}
+						startDate={item.startDate}
+						endDate={item.endDate}
+						location={item.location}
+						additionalInfo={item.additionalInfo}
+					/>
+				))}
+			</div>
 		</div>
 	);
 }

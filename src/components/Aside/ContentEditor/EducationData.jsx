@@ -1,4 +1,5 @@
 import { SideCard } from "../SideCard";
+import { v4 as uuidv4 } from "uuid";
 import { AcademicCapIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { AddDataBtn } from "./AddDataBtn";
@@ -36,19 +37,23 @@ function FormInput({ name, label, value, onChange, type }) {
 	);
 }
 
-function DataForm({ setEducationData, setFormActive }) {
-	const [newEducationItem, setNewEducationItem] = useState({});
-
+function DataForm({
+	setFormActive,
+	idForEdit,
+	educationData,
+	setEducationData,
+}) {
 	function handleSubmit(event) {
 		event.preventDefault();
 		setFormActive(false);
 	}
 
+
+	// @todo try to find a way to hold the referente to the object in the education array so that input onchange change the education item directly
+	const currentData = educationData.find((item) => item.id === idForEdit);
+
 	return (
 		<form onSubmit={handleSubmit}>
-			{
-				// @todo Implement all onChange to set the education data on these form inputs
-			}
 			<FormInput name="school" label="School / Institution" type="text" />
 			<FormInput name="degree" label="Degree" type="text" />
 
@@ -74,7 +79,14 @@ function DataForm({ setEducationData, setFormActive }) {
 				<button
 					className="rounded-lg bg-gray-200 px-3 py-1 transition-all duration-200 active:translate-y-1"
 					type="button"
-					onClick={() => setFormActive(false)}
+					onClick={() => {
+						if (educationData[educationData.length - 1].id === idForEdit) {
+							setEducationData((ed) =>
+								ed.filter((item) => item.id !== idForEdit),
+							);
+						}
+						setFormActive(false);
+					}}
 				>
 					Cancel
 				</button>
@@ -85,6 +97,7 @@ function DataForm({ setEducationData, setFormActive }) {
 
 function EducationData({ educationData, setEducationData }) {
 	const [formActive, setFormActive] = useState(false);
+	const [idForEdit, setIdForEdit] = useState(null);
 
 	return (
 		<SideCard
@@ -93,20 +106,41 @@ function EducationData({ educationData, setEducationData }) {
 		>
 			{formActive ? (
 				<DataForm
+					educationData={educationData}
 					setEducationData={setEducationData}
 					setFormActive={setFormActive}
+					idForEdit={idForEdit}
 				/>
 			) : (
 				<ul>
 					{educationData.map((item) => (
 						<DataItem
 							data={item}
+							setFormActive={setFormActive}
+							setIdForEdit={setIdForEdit}
 							type={DATAITEM_TYPES.school}
 							setEducationData={setEducationData}
 							key={item.id}
 						/>
 					))}
-					<AddDataBtn onCLick={() => setFormActive(true)} />
+					<AddDataBtn
+						onCLick={() => {
+							const newid = uuidv4();
+							setEducationData((ed) => [
+								...ed,
+								{
+									id: newid,
+									degree: "Degree",
+									school: "School",
+									startDate: "01/2000",
+									endDate: "Present",
+									location: "Place",
+								},
+							]);
+							setIdForEdit(newid);
+							setFormActive(true);
+						}}
+					/>
 				</ul>
 			)}
 		</SideCard>
