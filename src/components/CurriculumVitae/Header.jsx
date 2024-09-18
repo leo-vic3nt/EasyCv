@@ -6,11 +6,11 @@ function Header({ cvData, cvFont, cvAccentColor }) {
 	return (
 		<div className="flex flex-col items-center gap-3">
 			<h1
+				style={{ color: cvAccentColor }}
 				className={clsx(
 					"font-semibold",
 					cvFont === "font-serif" ? "text-5xl" : "text-4xl",
 				)}
-				style={{ color: cvAccentColor }}
 			>
 				{fullName}
 			</h1>
