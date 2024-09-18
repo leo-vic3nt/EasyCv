@@ -6,7 +6,7 @@ import { AddDataBtn } from "./AddDataBtn";
 import { DataItem } from "./DataItem";
 import { DATAITEM_TYPES } from "../../../lib/constants";
 
-function FormInput({ name, label, value, onChange, type }) {
+function FormInput({ name, label, value, onChange, type, required = false }) {
 	return (
 		<div className="mb-4 w-full">
 			<label
@@ -17,17 +17,18 @@ function FormInput({ name, label, value, onChange, type }) {
 			</label>
 			<div className="flex gap-3">
 				<input
+					className="w-full appearance-none rounded-xl bg-gray-100 px-3 py-2 leading-tight focus:shadow-outline focus:outline-none"
 					type={type}
 					id={name}
-					className="w-full appearance-none rounded-xl bg-gray-100 px-3 py-2 leading-tight focus:shadow-outline focus:outline-none"
+					name={name}
 					value={value}
 					onChange={onChange}
-					required={true}
+					required={required}
 				/>
 				{name === "aditionalInfo" && (
 					<button
-						type="button"
 						className="rounded-lg bg-slate-400 px-2 py-1 text-white transition-all duration-200 active:translate-y-1"
+						type="button"
 					>
 						Add
 					</button>
@@ -48,26 +49,63 @@ function DataForm({
 		setFormActive(false);
 	}
 
+	function handleChange(e) {
+		const { name, value } = e.target;
+
+		setEducationData((prevData) =>
+			prevData.map((item) =>
+				item.id === idForEdit ? { ...item, [name]: value } : item,
+			),
+		);
+	}
 
 	// @todo try to find a way to hold the referente to the object in the education array so that input onchange change the education item directly
 	const currentData = educationData.find((item) => item.id === idForEdit);
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<FormInput name="school" label="School / Institution" type="text" />
-			<FormInput name="degree" label="Degree" type="text" />
+			<FormInput
+				name="school"
+				label="School / Institution"
+				type="text"
+				required={true}
+				onChange={handleChange}
+			/>
+
+			<FormInput
+				name="degree"
+				label="Degree"
+				type="text"
+				required={true}
+				onChange={handleChange}
+			/>
 
 			<div className="flex flex-col gap-2 xl:flex-row">
-				<FormInput name="startDate" label="Start Date" type="text" />
-				<FormInput name="endDate" label="End Date" type="text1" />
+				<FormInput
+					name="startDate"
+					label="Start Date"
+					type="text"
+					required={true}
+					onChange={handleChange}
+				/>
+				<FormInput
+					name="endDate"
+					label="End Date"
+					type="text1"
+					required={true}
+					onChange={handleChange}
+				/>
 			</div>
 
-			<FormInput name="location" label="location" type="text" />
 			<FormInput
-				name="aditionalInfo"
-				label="aditional information"
-				optional={true}
+				name="location"
+				label="location"
+				type="text"
+				required={true}
+				onChange={handleChange}
 			/>
+
+			<FormInput name="aditionalInfo" label="aditional information" />
 
 			<div className="flex gap-3">
 				<button
@@ -76,6 +114,7 @@ function DataForm({
 				>
 					Save
 				</button>
+
 				<button
 					className="rounded-lg bg-gray-200 px-3 py-1 transition-all duration-200 active:translate-y-1"
 					type="button"

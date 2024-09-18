@@ -25,7 +25,7 @@ function Header({ cvData, cvFont, cvAccentColor }) {
 			</div>
 
 			{/* Second row */}
-			<div className="flex gap-5">
+			<div className="flex gap-5 text-center">
 				<div className="flex items-center gap-1">
 					<img
 						src="/github-142-svgrepo-com.svg"
