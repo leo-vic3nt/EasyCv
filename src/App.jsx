@@ -27,7 +27,7 @@ function App() {
 		DUMMY_DATA.personalInfo,
 	);
 	const [educationData, setEducationData] = useState(DUMMY_DATA.educationData);
-	const [cvFont, setCvFont] = useState(CV_FONTS.serif);
+	const [cvFont, setCvFont] = useState(CV_FONTS.sans);
 	const [cvAccentColor, setCvAccentColor] = useState("#000000");
 	const [cvLanguage, setCvLanguage] = useState(CV_LANGUAGES.en);
 
