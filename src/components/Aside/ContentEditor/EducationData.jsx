@@ -51,6 +51,7 @@ function DataForm({
 
 	function handleChange(e) {
 		const { name, value } = e.target;
+		e.target.value = value;
 
 		setEducationData((prevData) =>
 			prevData.map((item) =>
@@ -59,7 +60,6 @@ function DataForm({
 		);
 	}
 
-	// @todo try to find a way to hold the referente to the object in the education array so that input onchange change the education item directly
 	const currentData = educationData.find((item) => item.id === idForEdit);
 
 	return (
@@ -69,6 +69,7 @@ function DataForm({
 				label="School / Institution"
 				type="text"
 				required={true}
+				value={currentData.school}
 				onChange={handleChange}
 			/>
 
@@ -76,6 +77,7 @@ function DataForm({
 				name="degree"
 				label="Degree"
 				type="text"
+				value={currentData.degree}
 				required={true}
 				onChange={handleChange}
 			/>
@@ -85,13 +87,15 @@ function DataForm({
 					name="startDate"
 					label="Start Date"
 					type="text"
+					value={currentData.startDate}
 					required={true}
 					onChange={handleChange}
 				/>
 				<FormInput
 					name="endDate"
 					label="End Date"
-					type="text1"
+					type="text"
+					value={currentData.endDate}
 					required={true}
 					onChange={handleChange}
 				/>
@@ -101,6 +105,7 @@ function DataForm({
 				name="location"
 				label="location"
 				type="text"
+				value={currentData.location}
 				required={true}
 				onChange={handleChange}
 			/>
