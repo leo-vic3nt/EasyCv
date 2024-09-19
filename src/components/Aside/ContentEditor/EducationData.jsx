@@ -1,12 +1,23 @@
 import { SideCard } from "../SideCard";
 import { v4 as uuidv4 } from "uuid";
 import { AcademicCapIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { AddDataBtn } from "./AddDataBtn";
 import { DataItem } from "./DataItem";
 import { DATAITEM_TYPES } from "../../../lib/constants";
 
-function FormInput({ name, label, value, onChange, type, required = false }) {
+function FormInput({
+	name,
+	label,
+	value,
+	onChange,
+	type,
+	required = false,
+	idForEdit,
+	setEducationData,
+}) {
+	const inputRef = useRef(null);
+
 	return (
 		<div className="mb-4 w-full">
 			<label
@@ -24,14 +35,48 @@ function FormInput({ name, label, value, onChange, type, required = false }) {
 					value={value}
 					onChange={onChange}
 					required={required}
+					ref={inputRef}
 				/>
 				{name === "aditionalInfo" && (
-					<button
-						className="rounded-lg bg-slate-400 px-2 py-1 text-white transition-all duration-200 active:translate-y-1"
-						type="button"
-					>
-						Add
-					</button>
+					<>
+						<button
+							className="rounded-lg bg-slate-400 px-2 py-1 text-white transition-all duration-200 active:translate-y-1"
+							type="button"
+							onClick={() => {
+								const inputValue = inputRef.current.value;
+								setEducationData((prevData) =>
+									prevData.map((item) =>
+										item.id === idForEdit
+											? {
+													...item,
+													additionalInfo: [...item.additionalInfo, inputValue],
+												}
+											: item,
+									),
+								);
+							}}
+						>
+							Add
+						</button>
+						<button
+							className="rounded-lg bg-red-400 px-2 py-1 text-white transition-all duration-200 active:translate-y-1"
+							type="button"
+							onClick={() => {
+								setEducationData((prevData) =>
+									prevData.map((item) =>
+										item.id === idForEdit
+											? {
+													...item,
+													additionalInfo: item.additionalInfo.slice(0, -1),
+												}
+											: item,
+									),
+								);
+							}}
+						>
+							Clear
+						</button>
+					</>
 				)}
 			</div>
 		</div>
@@ -106,10 +151,14 @@ function DataForm({
 				required={true}
 				onChange={handleChange}
 			/>
-			{
-				// @todo find a way to make adition info work by appending the additional info array and updating the view
-			}
-			<FormInput name="aditionalInfo" label="aditional information" />
+
+			<FormInput
+				name="aditionalInfo"
+				label="aditional information"
+				idForEdit={idForEdit}
+				setEducationData={setEducationData}
+			/>
+
 			<div className="flex gap-3">
 				<button
 					className="rounded-lg bg-blue-500 px-3 py-1 text-white transition-all duration-200 active:translate-y-1"
