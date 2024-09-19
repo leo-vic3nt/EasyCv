@@ -72,7 +72,6 @@ function DataForm({
 				value={currentData.school}
 				onChange={handleChange}
 			/>
-
 			<FormInput
 				name="degree"
 				label="Degree"
@@ -81,7 +80,6 @@ function DataForm({
 				required={true}
 				onChange={handleChange}
 			/>
-
 			<div className="flex flex-col gap-2 xl:flex-row">
 				<FormInput
 					name="startDate"
@@ -100,7 +98,6 @@ function DataForm({
 					onChange={handleChange}
 				/>
 			</div>
-
 			<FormInput
 				name="location"
 				label="location"
@@ -109,9 +106,10 @@ function DataForm({
 				required={true}
 				onChange={handleChange}
 			/>
-
+			{
+				// @todo find a way to make adition info work by appending the additional info array and updating the view
+			}
 			<FormInput name="aditionalInfo" label="aditional information" />
-
 			<div className="flex gap-3">
 				<button
 					className="rounded-lg bg-blue-500 px-3 py-1 text-white transition-all duration-200 active:translate-y-1"
@@ -124,7 +122,10 @@ function DataForm({
 					className="rounded-lg bg-gray-200 px-3 py-1 transition-all duration-200 active:translate-y-1"
 					type="button"
 					onClick={() => {
-						if (educationData[educationData.length - 1].id === idForEdit) {
+						if (
+							educationData[educationData.length - 1].id === idForEdit &&
+							educationData.length > 1
+						) {
 							setEducationData((ed) =>
 								ed.filter((item) => item.id !== idForEdit),
 							);
