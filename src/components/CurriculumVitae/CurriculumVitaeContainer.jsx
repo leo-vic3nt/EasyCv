@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { Header } from "./Header";
 import { Education } from "./Education";
+import { Experience } from "./Experience";
 
 function CurriculumVitaeContainer({
 	cvData,
@@ -8,6 +9,7 @@ function CurriculumVitaeContainer({
 	cvAccentColor,
 	cvLanguage,
 	educationData,
+	experienceData,
 }) {
 	return (
 		<div
@@ -17,6 +19,11 @@ function CurriculumVitaeContainer({
 			)}
 		>
 			<Header cvData={cvData} cvFont={cvFont} cvAccentColor={cvAccentColor} />
+			<Experience
+				cvAccentColor={cvAccentColor}
+				cvLanguage={cvLanguage}
+				experienceData={experienceData}
+			/>
 			<Education
 				cvAccentColor={cvAccentColor}
 				cvLanguage={cvLanguage}

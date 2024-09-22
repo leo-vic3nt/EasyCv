@@ -26,6 +26,20 @@ const DUMMY_DATA = {
 			additionalInfo: ["GPA: 3.4/4.0"],
 		},
 	],
+
+	experienceData: [
+		{
+			id: uuidv4(),
+			companyName: "Umbrella Inc.",
+			role: "Junior Software Developer",
+			location: "Fortaleza, Brazil",
+			startDate: "01/2021",
+			endDate: "Present",
+			additionalInfo: [
+				"Responsible for an increase of 45% in code output on the main project during my stay",
+			],
+		},
+	],
 };
 
 const DATAITEM_TYPES = {
