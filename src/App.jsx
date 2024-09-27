@@ -45,6 +45,8 @@ function App() {
 						setPersonalsDetailsData={setPersonalsDetailsData}
 						educationData={educationData}
 						setEducationData={setEducationData}
+						experienceData={experienceData}
+						setExperienceData={setExperienceData}
 					/>
 				) : (
 					<StyleEditor

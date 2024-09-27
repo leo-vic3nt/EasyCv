@@ -213,7 +213,7 @@ function EducationData({ educationData, setEducationData }) {
 							setFormActive={setFormActive}
 							setIdForEdit={setIdForEdit}
 							type={DATAITEM_TYPES.school}
-							setEducationData={setEducationData}
+							stateUpdater={setEducationData}
 							key={item.id}
 						/>
 					))}
@@ -229,6 +229,7 @@ function EducationData({ educationData, setEducationData }) {
 									startDate: "01/2000",
 									endDate: "Present",
 									location: "Place",
+									additionalInfo: [],
 								},
 							]);
 							setIdForEdit(newid);

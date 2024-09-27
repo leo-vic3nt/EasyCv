@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { EducationData } from "./EducationData";
+import { ExperienceData } from "./ExperienceData";
 import { PersonalDetailsForm } from "./PersonalDetailsForm";
 
 function ContentEditor({
@@ -7,6 +8,8 @@ function ContentEditor({
 	setPersonalsDetailsData,
 	educationData,
 	setEducationData,
+	experienceData,
+	setExperienceData,
 }) {
 	return (
 		<>
@@ -17,6 +20,10 @@ function ContentEditor({
 			<EducationData
 				educationData={educationData}
 				setEducationData={setEducationData}
+			/>
+			<ExperienceData
+				experienceData={experienceData}
+				setExperienceData={setExperienceData}
 			/>
 		</>
 	);
