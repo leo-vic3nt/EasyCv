@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { CV_FONTS } from "../../lib/constants";
 
 function Header({ cvData, cvFont, cvAccentColor }) {
 	const { fullName, phoneNumber, location, email, github, linkedin } = cvData;
@@ -32,7 +33,9 @@ function Header({ cvData, cvFont, cvAccentColor }) {
 						alt="github icon"
 						className="size-5"
 					/>
-					<p className="text-lg">{github}</p>
+					<p className={cvFont === CV_FONTS.mono ? "text-sm" : "text-lg"}>
+						{github}
+					</p>
 				</div>
 				<div className="flex items-center gap-1">
 					<img
@@ -41,7 +44,9 @@ function Header({ cvData, cvFont, cvAccentColor }) {
 						className="size-5"
 					/>
 
-					<p className="text-lg">{linkedin}</p>
+					<p className={cvFont === CV_FONTS.mono ? "text-sm" : "text-lg"}>
+						{linkedin}
+					</p>
 				</div>
 			</div>
 		</div>
