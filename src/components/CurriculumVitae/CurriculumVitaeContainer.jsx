@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { Header } from "./Header";
 import { Education } from "./Education";
 import { Experience } from "./Experience";
+import { Projects } from "./Projects";
 
 function CurriculumVitaeContainer({
 	cvData,
@@ -10,6 +11,7 @@ function CurriculumVitaeContainer({
 	cvLanguage,
 	educationData,
 	experienceData,
+	projectsData,
 }) {
 	return (
 		<div
@@ -28,6 +30,11 @@ function CurriculumVitaeContainer({
 				cvAccentColor={cvAccentColor}
 				cvLanguage={cvLanguage}
 				educationData={educationData}
+			/>
+			<Projects
+				cvAccentColor={cvAccentColor}
+				cvLanguage={cvLanguage}
+				projectData={projectsData}
 			/>
 		</div>
 	);

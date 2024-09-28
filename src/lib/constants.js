@@ -40,6 +40,18 @@ const DUMMY_DATA = {
 			],
 		},
 	],
+
+	projects: [
+		{
+			id: uuidv4(),
+			title: "RandoSite.com",
+			startDate: "01/2020",
+			endDate: "03/2021",
+			additionalInfo: [
+				"Responsible for an increase of 45% in code output on the main project during my stay",
+			],
+		},
+	],
 };
 
 const DATAITEM_TYPES = {
