@@ -1,4 +1,4 @@
-// @todo Education is done, now implement work experience with the same functionalitiesimport { SideCard } from "../SideCard";
+// @todo Finish this, then add Skills data
 
 import { SideCard } from "../SideCard";
 import { v4 as uuidv4 } from "uuid";

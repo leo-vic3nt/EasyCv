@@ -1,7 +1,7 @@
 import { PencilSquareIcon, MinusCircleIcon } from "@heroicons/react/24/outline";
 import { DATAITEM_TYPES } from "../../../lib/constants";
 
-function Controls({ data, setFormActive, stateUpdater, setIdForEdit }) {
+function Controls({ data, type, setFormActive, stateUpdater, setIdForEdit }) {
 	return (
 		<div className="flex gap-2">
 			<button
@@ -18,7 +18,11 @@ function Controls({ data, setFormActive, stateUpdater, setIdForEdit }) {
 				type="button"
 				onClick={() => {
 					stateUpdater((stateData) => {
-						if (stateData.length <= 1) {
+						if (
+							stateData.length <= 1 &&
+							(type === DATAITEM_TYPES.school ||
+								type === DATAITEM_TYPES.workExperience)
+						) {
 							alert("You must have at least one item");
 							return stateData;
 						}
@@ -43,6 +47,7 @@ function DataItem({ type, data, setFormActive, stateUpdater, setIdForEdit }) {
 				setIdForEdit={setIdForEdit}
 				setFormActive={setFormActive}
 				data={data}
+				type={type}
 			/>
 		</div>
 	);

@@ -31,11 +31,13 @@ function CurriculumVitaeContainer({
 				cvLanguage={cvLanguage}
 				educationData={educationData}
 			/>
-			<Projects
-				cvAccentColor={cvAccentColor}
-				cvLanguage={cvLanguage}
-				projectData={projectsData}
-			/>
+			{projectsData.length > 0 && (
+				<Projects
+					cvAccentColor={cvAccentColor}
+					cvLanguage={cvLanguage}
+					projectData={projectsData}
+				/>
+			)}
 		</div>
 	);
 }

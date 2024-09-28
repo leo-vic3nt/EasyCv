@@ -1,5 +1,3 @@
-// @todo Education is done, now implement work experience with the same functionalitiesimport { SideCard } from "../SideCard";
-
 import { SideCard } from "../SideCard";
 import { v4 as uuidv4 } from "uuid";
 import { BuildingOffice2Icon } from "@heroicons/react/24/outline";
