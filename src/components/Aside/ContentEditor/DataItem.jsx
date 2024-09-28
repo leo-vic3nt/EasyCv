@@ -36,7 +36,7 @@ function DataItem({ type, data, setFormActive, stateUpdater, setIdForEdit }) {
 	return (
 		<div className="flex items-center justify-between border-gray-600 border-b-2 p-2">
 			<h3 className="font-semibold">
-				{type === DATAITEM_TYPES.school ? data.school : data.companyName}
+				{type === DATAITEM_TYPES.school ? data.degree : data.role}
 			</h3>
 			<Controls
 				stateUpdater={stateUpdater}
