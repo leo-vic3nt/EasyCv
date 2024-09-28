@@ -20,13 +20,13 @@ function ContentEditor({
 				personalDetailsData={personalDetailsData}
 				setPersonalsDetailsData={setPersonalsDetailsData}
 			/>
-			<EducationData
-				educationData={educationData}
-				setEducationData={setEducationData}
-			/>
 			<ExperienceData
 				experienceData={experienceData}
 				setExperienceData={setExperienceData}
+			/>
+			<EducationData
+				educationData={educationData}
+				setEducationData={setEducationData}
 			/>
 			<ProjectsData
 				projectsData={projectsData}

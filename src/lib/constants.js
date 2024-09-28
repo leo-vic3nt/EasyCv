@@ -32,6 +32,7 @@ const DUMMY_DATA = {
 			startDate: "01/2022",
 			endDate: "Present",
 			location: "Fortaleza, Brazil",
+			additionalInfo: [],
 		},
 	],
 
