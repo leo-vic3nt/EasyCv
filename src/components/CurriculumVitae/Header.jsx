@@ -5,7 +5,7 @@ function Header({ cvData, cvFont, cvAccentColor }) {
 	const { fullName, phoneNumber, location, email, github, linkedin } = cvData;
 
 	return (
-		<div className="flex flex-col items-center gap-3">
+		<div className="flex flex-col items-center gap-3 mb-3">
 			<h1
 				style={{ color: cvAccentColor }}
 				className={clsx(
