@@ -16,7 +16,7 @@ function CurriculumVitaeContainer({
 	return (
 		<div
 			className={clsx(
-				"flex min-h-[29.7cm] min-w-[21cm] flex-col gap-10 bg-white px-8 pt-6 shadow-lg",
+				"flex h-[29.7cm] w-[21cm] flex-col gap-10 bg-white px-8 pt-6 shadow-lg",
 				cvFont,
 			)}
 		>
