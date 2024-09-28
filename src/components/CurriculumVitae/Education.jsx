@@ -7,23 +7,23 @@ function EducationItem({
 	additionalInfo = [],
 }) {
 	return (
-		<div>
-			<div className="flex justify-between px-2 text-lg">
+		<div className="flex flex-col gap-2">
+			<div className="flex justify-between text-lg">
 				<div>
 					<p className="font-bold">{degree}</p>
 					<p>{school}</p>
-					<ul className="list-disc px-6 text-sm">
-						{additionalInfo.map((item, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<li key={index}>{item}</li>
-						))}
-					</ul>
 				</div>
 				<div className="text-center">
 					<p className="font-bold">{`${startDate} - ${endDate}`}</p>
 					<p>{location}</p>
 				</div>
 			</div>
+			<ul className="list-disc px-6 text-sm">
+				{additionalInfo.map((item, index) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+					<li key={index}>{item}</li>
+				))}
+			</ul>
 		</div>
 	);
 }
@@ -41,7 +41,7 @@ function Header({ cvAccentColor, cvLanguage }) {
 
 function Education({ cvAccentColor, cvLanguage, educationData }) {
 	return (
-		<div>
+		<div className="flex flex-col gap-3">
 			<Header cvAccentColor={cvAccentColor} cvLanguage={cvLanguage} />
 			<div className="flex flex-col gap-3">
 				{educationData.map((item) => (

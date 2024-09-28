@@ -20,10 +20,18 @@ const DUMMY_DATA = {
 			id: uuidv4(),
 			school: "Universidade de Fortaleza",
 			degree: "Bachelor in Computer Science",
-			startDate: "08/2022",
-			endDate: "Present",
+			startDate: "01/2018",
+			endDate: "06/2020",
 			location: "Fortaleza, Brazil",
 			additionalInfo: ["GPA: 3.4/4.0"],
+		},
+		{
+			id: uuidv4(),
+			school: "Universidade de Fortaleza",
+			degree: "Master of Computer Science",
+			startDate: "01/2022",
+			endDate: "Present",
+			location: "Fortaleza, Brazil",
 		},
 	],
 
@@ -31,12 +39,23 @@ const DUMMY_DATA = {
 		{
 			id: uuidv4(),
 			companyName: "Umbrella Inc.",
-			role: "Junior Software Developer",
+			role: "Junior Software Engineer",
+			location: "Fortaleza, Brazil",
+			startDate: "01/2020",
+			endDate: "08/2022",
+			additionalInfo: [
+				"Responsible for an increase of 45% in code output on the main project during my stay",
+			],
+		},
+		{
+			id: uuidv4(),
+			companyName: "Umbrella Inc.",
+			role: "Software Engineer",
 			location: "Fortaleza, Brazil",
 			startDate: "01/2021",
 			endDate: "Present",
 			additionalInfo: [
-				"Responsible for an increase of 45% in code output on the main project during my stay",
+				"Led the migration of the company's primary application to a microservices architecture, resulting in a 30% reduction in deployment times.",
 			],
 		},
 	],
@@ -48,7 +67,10 @@ const DUMMY_DATA = {
 			startDate: "01/2020",
 			endDate: "03/2021",
 			additionalInfo: [
-				"Responsible for an increase of 45% in code output on the main project during my stay",
+				"Developed a full stack web application using React for the frontend, Node.js and Express for the backend, and MongoDB for the database",
+				"Implemented user authentication and authorization using JWT",
+
+				"Utilized responsive design principles for optimal user experience across devices",
 			],
 		},
 	],
