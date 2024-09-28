@@ -79,6 +79,7 @@ const DUMMY_DATA = {
 const DATAITEM_TYPES = {
 	school: "school",
 	workExperience: "workExperience",
+	projects: "projects",
 };
 
 // Using tailwind classes

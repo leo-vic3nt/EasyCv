@@ -17,12 +17,12 @@ function Controls({ data, setFormActive, stateUpdater, setIdForEdit }) {
 			<button
 				type="button"
 				onClick={() => {
-					stateUpdater((data) => {
-						if (data.length === 1) {
+					stateUpdater((stateData) => {
+						if (stateData.length <= 1) {
 							alert("You must have at least one item");
-							return data;
+							return stateData;
 						}
-						return data.filter((item) => item.id !== data.id);
+						return stateData.filter((item) => item.id !== data.id);
 					});
 				}}
 			>

@@ -48,6 +48,8 @@ function App() {
 						setEducationData={setEducationData}
 						experienceData={experienceData}
 						setExperienceData={setExperienceData}
+						projectsData={projectsData}
+						setProjectsData={setProjectsData}
 					/>
 				) : (
 					<StyleEditor

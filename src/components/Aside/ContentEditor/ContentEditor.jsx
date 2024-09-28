@@ -2,6 +2,7 @@
 import { EducationData } from "./EducationData";
 import { ExperienceData } from "./ExperienceData";
 import { PersonalDetailsForm } from "./PersonalDetailsForm";
+import { ProjectsData } from "./ProjectsData";
 
 function ContentEditor({
 	personalDetailsData,
@@ -10,6 +11,8 @@ function ContentEditor({
 	setEducationData,
 	experienceData,
 	setExperienceData,
+	projectsData,
+	setProjectsData,
 }) {
 	return (
 		<>
@@ -24,6 +27,10 @@ function ContentEditor({
 			<ExperienceData
 				experienceData={experienceData}
 				setExperienceData={setExperienceData}
+			/>
+			<ProjectsData
+				projectsData={projectsData}
+				setProjectsData={setProjectsData}
 			/>
 		</>
 	);
