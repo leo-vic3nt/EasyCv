@@ -114,14 +114,7 @@ function DataForm({ setFormActive, idForEdit, projectsData, setProjectsData }) {
 				value={currentData.title}
 				onChange={handleChange}
 			/>
-			<FormInput
-				name="role"
-				label="Role"
-				type="text"
-				value={currentData.role}
-				required={true}
-				onChange={handleChange}
-			/>
+
 			<div className="flex flex-col gap-2 xl:flex-row">
 				<FormInput
 					name="startDate"
@@ -140,20 +133,12 @@ function DataForm({ setFormActive, idForEdit, projectsData, setProjectsData }) {
 					onChange={handleChange}
 				/>
 			</div>
-			<FormInput
-				name="location"
-				label="location"
-				type="text"
-				value={currentData.location}
-				required={true}
-				onChange={handleChange}
-			/>
 
 			<FormInput
 				name="aditionalInfo"
 				label="aditional information"
 				idForEdit={idForEdit}
-				setExperienceData={setProjectsData}
+				setProjectsData={setProjectsData}
 			/>
 
 			<div className="flex gap-3">
@@ -192,7 +177,7 @@ function ProjectsData({ projectsData, setProjectsData }) {
 
 	return (
 		<SideCard
-			title={"Projects"}
+			title={"Notable Projects"}
 			icon={<CircleStackIcon className="stroke-1" />}
 		>
 			{formActive ? (
@@ -221,11 +206,9 @@ function ProjectsData({ projectsData, setProjectsData }) {
 								...wk,
 								{
 									id: newid,
-									companyName: "Company Name",
-									role: "Intern",
+									title: "Project Title",
 									startDate: "01/2000",
 									endDate: "Present",
-									location: "Place",
 									additionalInfo: [],
 								},
 							]);

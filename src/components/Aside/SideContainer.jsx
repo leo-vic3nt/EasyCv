@@ -9,7 +9,7 @@ function SideContainer({ children }) {
 			}`}
 			</style>
 			<div
-				className="h-[29.7cm] pt-10 w-full min-w-72 max-w-lg overflow-auto custom-scrollbar pl-4"
+				className="custom-scrollbar h-[29.7cm] w-full min-w-72 max-w-lg overflow-auto py-10 pl-4"
 				style={{ direction: "rtl" }}
 			>
 				<div

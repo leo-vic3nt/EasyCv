@@ -37,11 +37,22 @@ function Controls({ data, type, setFormActive, stateUpdater, setIdForEdit }) {
 }
 
 function DataItem({ type, data, setFormActive, stateUpdater, setIdForEdit }) {
+	function getTitle(type) {
+		switch (type) {
+			case DATAITEM_TYPES.school:
+				return data.degree;
+
+			case DATAITEM_TYPES.workExperience:
+				return data.role;
+
+			case DATAITEM_TYPES.projects:
+				return data.title;
+		}
+	}
+
 	return (
 		<div className="flex items-center justify-between border-gray-600 border-b-2 p-2">
-			<h3 className="font-semibold">
-				{type === DATAITEM_TYPES.school ? data.degree : data.role}
-			</h3>
+			<h3 className="font-semibold">{getTitle(type)}</h3>
 			<Controls
 				stateUpdater={stateUpdater}
 				setIdForEdit={setIdForEdit}
