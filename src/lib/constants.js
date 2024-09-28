@@ -38,7 +38,7 @@ const DUMMY_DATA = {
 	experienceData: [
 		{
 			id: uuidv4(),
-			companyName: "Umbrella Inc.",
+			companyName: "Umbrella Corporation",
 			role: "Junior Software Engineer",
 			location: "Fortaleza, Brazil",
 			startDate: "01/2020",
@@ -49,7 +49,7 @@ const DUMMY_DATA = {
 		},
 		{
 			id: uuidv4(),
-			companyName: "Umbrella Inc.",
+			companyName: "Black Mesa Labs",
 			role: "Software Engineer",
 			location: "Fortaleza, Brazil",
 			startDate: "01/2021",
