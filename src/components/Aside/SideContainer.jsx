@@ -4,16 +4,9 @@ function SideContainer({ children }) {
 		<>
 			<style>
 				{`
-
-
-		.custom-scrollbar {
-			scrollbar-width: thin;
+				.custom-scrollbar {
             scrollbar-color: #888 #f1f1f1;
-
-		}
-
-
-        `}
+			}`}
 			</style>
 			<div
 				className="h-[29.7cm] pt-10 w-full min-w-72 max-w-lg overflow-auto custom-scrollbar pl-4"
