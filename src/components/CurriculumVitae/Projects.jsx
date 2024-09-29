@@ -9,10 +9,10 @@ function ProjectItem({ title, startDate, endDate, additionalInfo = [] }) {
 					<p className="font-bold">{`${startDate} - ${endDate}`}</p>
 				</div>
 			</div>
-			<ul className="-ml-8 flex list-disc flex-wrap px-6 text-sm">
+			<ul className="list-disc px-6 text-sm">
 				{additionalInfo.map((item, index) => (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-					<li className="ml-8" key={index}>{item}</li>
+					<li key={index}>{item}</li>
 				))}
 			</ul>
 		</div>
