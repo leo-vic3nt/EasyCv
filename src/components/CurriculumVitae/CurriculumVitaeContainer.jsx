@@ -3,6 +3,7 @@ import { Header } from "./Header";
 import { Education } from "./Education";
 import { Experience } from "./Experience";
 import { Projects } from "./Projects";
+import { Skills } from "./Skills";
 
 function CurriculumVitaeContainer({
 	cvData,
@@ -12,6 +13,7 @@ function CurriculumVitaeContainer({
 	educationData,
 	experienceData,
 	projectsData,
+	skillsData,
 }) {
 	return (
 		<div
@@ -37,6 +39,10 @@ function CurriculumVitaeContainer({
 					cvLanguage={cvLanguage}
 					projectData={projectsData}
 				/>
+			)}
+
+			{(skillsData.languages.length > 0 || skillsData.tools.length > 0) && (
+				<Skills cvAccentColor={cvAccentColor} skillsData={skillsData} />
 			)}
 		</div>
 	);

@@ -31,6 +31,7 @@ function App() {
 		DUMMY_DATA.experienceData,
 	);
 	const [projectsData, setProjectsData] = useState(DUMMY_DATA.projects);
+	const [skillsData, setSkillsData] = useState(DUMMY_DATA.skills);
 	const [cvFont, setCvFont] = useState(CV_FONTS.sans);
 	const [cvAccentColor, setCvAccentColor] = useState("#000000");
 	const [cvLanguage, setCvLanguage] = useState(CV_LANGUAGES.en);
@@ -71,6 +72,7 @@ function App() {
 				educationData={educationData}
 				experienceData={experienceData}
 				projectsData={projectsData}
+				skillsData={skillsData}
 			/>
 		</Container>
 	);

@@ -75,6 +75,11 @@ const DUMMY_DATA = {
 			],
 		},
 	],
+
+	skills: {
+		languages: ["Javascript", "Java", "C#"],
+		tools: ["Git", "Linux", "React", "TailwindCss"],
+	},
 };
 
 const DATAITEM_TYPES = {
