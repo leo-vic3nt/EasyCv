@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+import React from "react";
+
 function Tools({ toolsArray }) {
   function createToolsList(array) {
     return (
@@ -26,7 +29,7 @@ function Tools({ toolsArray }) {
 }
 
 function Languages({ languagesArray }) {
-  function createLangaugesList(array) {
+  function createLanguagesList(array) {
     return (
       <ul className="ml-6 flex list-disc flex-wrap gap-1">
         {array.map((language, index) => {
@@ -47,7 +50,7 @@ function Languages({ languagesArray }) {
   return (
     <div className="flex flex-col">
       <h3 className="min-w-fit font-bold">Programming Languages</h3>
-      {createLangaugesList(languagesArray)}
+      {createLanguagesList(languagesArray)}
     </div>
   );
 }

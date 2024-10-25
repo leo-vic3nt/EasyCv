@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+import React from "react";
+
 function ProjectItem({ title, startDate, endDate, additionalInfo = [] }) {
   return (
     <div className="flex flex-col gap-2">

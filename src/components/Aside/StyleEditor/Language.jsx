@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import clsx from "clsx";
 import { SideCard } from "../SideCard";
 import { LanguageIcon } from "@heroicons/react/24/outline";
 import { CV_LANGUAGES } from "../../../lib/constants";
+import React from "react";
 
 function LanguageBtn({ setCvLanguage, languageToSet, isActive }) {
   return (

@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import clsx from "clsx";
 import { CV_FONTS } from "../../lib/constants";
+import React from "react";
 
 function Header({ cvData, cvFont, cvAccentColor }) {
   const { fullName, phoneNumber, location, email, github, linkedin } = cvData;

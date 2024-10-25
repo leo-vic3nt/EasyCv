@@ -1,5 +1,7 @@
-import { PencilSquareIcon, MinusCircleIcon } from "@heroicons/react/24/outline";
+/* eslint-disable react/prop-types */
+import { MinusCircleIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
 import { DATAITEM_TYPES } from "../../../lib/constants";
+import React from "react";
 
 function Controls({ data, type, setFormActive, stateUpdater, setIdForEdit }) {
   return (

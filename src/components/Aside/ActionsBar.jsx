@@ -1,10 +1,7 @@
 /* eslint-disable react/prop-types */
-import {
-  TrashIcon,
-  ArrowUturnLeftIcon,
-  ArrowDownOnSquareIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowDownOnSquareIcon, ArrowUturnLeftIcon, TrashIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
+import React from "react";
 
 function Container({ children }) {
   return (

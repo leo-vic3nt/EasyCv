@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { SideCard } from "../SideCard";
 import { v4 as uuidv4 } from "uuid";
 import { CircleStackIcon } from "@heroicons/react/24/outline";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { AddDataBtn } from "./AddDataBtn";
 import { DataItem } from "./DataItem";
 import { DATAITEM_TYPES } from "../../../lib/constants";

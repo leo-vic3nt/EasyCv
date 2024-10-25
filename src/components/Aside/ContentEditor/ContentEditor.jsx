@@ -3,6 +3,7 @@ import { EducationData } from "./EducationData";
 import { ExperienceData } from "./ExperienceData";
 import { PersonalDetailsForm } from "./PersonalDetailsForm";
 import { ProjectsData } from "./ProjectsData";
+import React from "react";
 
 function ContentEditor({
   personalDetailsData,

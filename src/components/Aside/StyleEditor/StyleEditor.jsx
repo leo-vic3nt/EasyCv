@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Colors } from "./Color";
 import { Fonts } from "./Fonts";
 import { Languages } from "./Language";
+import React from "react";
 
 function StyleEditor({
   cvFont,

@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import clsx from "clsx";
 import { Header } from "./Header";
 import { Education } from "./Education";
 import { Experience } from "./Experience";
 import { Projects } from "./Projects";
 import { Skills } from "./Skills";
+import React from "react";
 
 function CurriculumVitaeContainer({
   cvData,

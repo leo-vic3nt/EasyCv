@@ -1,9 +1,7 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
+import React, { useState } from "react";
 import { clsx } from "clsx";
-import {
-  DocumentTextIcon,
-  PencilSquareIcon,
-} from "@heroicons/react/24/outline";
+import { DocumentTextIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
 import { EDITOR_MODES } from "../../lib/constants";
 
 function Container({ children }) {

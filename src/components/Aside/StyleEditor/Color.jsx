@@ -1,8 +1,7 @@
+/* eslint-disable react/prop-types */
 import { SideCard } from "../SideCard";
-import {
-  PaintBrushIcon,
-  ArrowUturnLeftIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowUturnLeftIcon, PaintBrushIcon } from "@heroicons/react/24/outline";
+import React from "react";
 
 function Colors({ setCvAccentColor, cvAccentColor }) {
   const handleColorChange = (event) => {

@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import React from "react";
+
 function Container({ children }) {
   return (
     <div className="mx-auto my-0 flex w-full flex-col gap-3 rounded-2xl bg-white p-4 shadow-md shadow-slate-300">

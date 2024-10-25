@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+import React from "react";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
 function AddDataBtn({ onCLick }) {

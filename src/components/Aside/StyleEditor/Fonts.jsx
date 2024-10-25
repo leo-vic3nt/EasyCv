@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import clsx from "clsx";
 import { CV_FONTS } from "../../../lib/constants";
 import { SideCard } from "../SideCard";
 import { ChatBubbleBottomCenterTextIcon } from "@heroicons/react/24/outline";
+import React from "react";
 
 function FontBtn({ setCvFont, fontToSet, isActive }) {
   return (
@@ -12,7 +14,7 @@ function FontBtn({ setCvFont, fontToSet, isActive }) {
         fontToSet ? `font-${fontToSet}` : "",
         isActive && "bg-gray-200",
       )}
-      onClick={() => setCvFont((_) => CV_FONTS[fontToSet])}
+      onClick={() => setCvFont(() => CV_FONTS[fontToSet])}
     >
       <p
         className={clsx(
