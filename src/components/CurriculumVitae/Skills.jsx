@@ -22,7 +22,9 @@ function Tools({ toolsArray }) {
 
   return (
     <div className="flex flex-col">
-      <h3 className="min-w-fit font-bold">Technologies</h3>
+      {toolsArray.length > 0 && (
+        <h3 className="min-w-fit font-bold">Technologies</h3>
+      )}
       {createToolsList(toolsArray)}
     </div>
   );
@@ -49,7 +51,9 @@ function Languages({ languagesArray }) {
 
   return (
     <div className="flex flex-col">
-      <h3 className="min-w-fit font-bold">Programming Languages</h3>
+      {languagesArray.length > 0 && (
+        <h3 className="min-w-fit font-bold">Programming Languages</h3>
+      )}
       {createLanguagesList(languagesArray)}
     </div>
   );

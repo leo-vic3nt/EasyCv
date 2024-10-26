@@ -4,6 +4,7 @@ import { ExperienceData } from "./ExperienceData";
 import { PersonalDetailsForm } from "./PersonalDetailsForm";
 import { ProjectsData } from "./ProjectsData";
 import React from "react";
+import SkillsData from "./SkillsData.jsx";
 
 function ContentEditor({
   personalDetailsData,
@@ -14,6 +15,8 @@ function ContentEditor({
   setExperienceData,
   projectsData,
   setProjectsData,
+  skillsData,
+  setSkillsData,
 }) {
   return (
     <>
@@ -33,6 +36,8 @@ function ContentEditor({
         projectsData={projectsData}
         setProjectsData={setProjectsData}
       />
+
+      <SkillsData skillsData={skillsData} setSkillsData={setSkillsData} />
     </>
   );
 }

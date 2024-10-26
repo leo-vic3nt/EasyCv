@@ -4,7 +4,7 @@ import React from "react";
 
 function Container({ children }) {
   return (
-    <div className="mx-auto my-0 flex w-full flex-col gap-3 rounded-2xl bg-white p-4 shadow-md shadow-slate-300">
+    <div className="mx-auto my-0 flex w-full flex-col gap-1 rounded-2xl bg-white p-4 shadow-md shadow-slate-300">
       {children}
     </div>
   );

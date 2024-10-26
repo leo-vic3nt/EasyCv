@@ -77,7 +77,7 @@ const DUMMY_DATA = {
   ],
 
   skills: {
-    languages: ["Javascript", "Java", "C#"],
+    languages: ["Javascript", "Java", "C#", "Javascript", "Java"],
     tools: ["Git", "Linux", "React", "TailwindCss"],
   },
 };

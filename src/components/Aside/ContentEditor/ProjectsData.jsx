@@ -15,7 +15,7 @@ function FormInput({
   type,
   required = false,
   idForEdit,
-  setProjectsData,
+  setSkillsData,
 }) {
   const inputRef = useRef(null);
 
@@ -45,7 +45,7 @@ function FormInput({
               type="button"
               onClick={() => {
                 const inputValue = inputRef.current.value;
-                setProjectsData((prevData) =>
+                setSkillsData((prevData) =>
                   prevData.map((item) =>
                     item.id === idForEdit
                       ? {
@@ -63,7 +63,7 @@ function FormInput({
               className="rounded-lg bg-red-400 px-2 py-1 text-white transition-all duration-200 active:translate-y-1"
               type="button"
               onClick={() => {
-                setProjectsData((prevData) =>
+                setSkillsData((prevData) =>
                   prevData.map((item) =>
                     item.id === idForEdit
                       ? {
@@ -137,7 +137,7 @@ function DataForm({ setFormActive, idForEdit, projectsData, setProjectsData }) {
         name="aditionalInfo"
         label="aditional information"
         idForEdit={idForEdit}
-        setProjectsData={setProjectsData}
+        setSkillsData={setProjectsData}
       />
 
       <div className="flex gap-3">
@@ -200,18 +200,18 @@ function ProjectsData({ projectsData, setProjectsData }) {
           ))}
           <AddDataBtn
             onCLick={() => {
-              const newid = uuidv4();
-              setProjectsData((wk) => [
-                ...wk,
+              const newId = uuidv4();
+              setProjectsData((pd) => [
+                ...pd,
                 {
-                  id: newid,
+                  id: newId,
                   title: "Project Title",
                   startDate: "01/2000",
                   endDate: "Present",
                   additionalInfo: [],
                 },
               ]);
-              setIdForEdit(newid);
+              setIdForEdit(newId);
               setFormActive(true);
             }}
           />
