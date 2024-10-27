@@ -36,10 +36,20 @@ function App() {
   const [cvAccentColor, setCvAccentColor] = useState("#000000");
   const [cvLanguage, setCvLanguage] = useState(CV_LANGUAGES.en);
 
+  function restoreDefaults() {
+    setPersonalsDetailsData(DUMMY_DATA.personalInfo);
+    setEducationData(DUMMY_DATA.educationData);
+    setExperienceData(DUMMY_DATA.experienceData);
+    setProjectsData(DUMMY_DATA.projects);
+    setSkillsData(DUMMY_DATA.skills);
+    setCvFont(CV_FONTS.sans);
+    setCvAccentColor("#000000");
+  }
+
   return (
     <Container>
       <SideContainer>
-        <ActionsBar />
+        <ActionsBar restoreDefaults={restoreDefaults}/>
         <ModeToggle setMode={setMode} />
         {currentMode === EDITOR_MODES.contentEditor ? (
           <ContentEditor

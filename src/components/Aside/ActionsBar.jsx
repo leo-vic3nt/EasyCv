@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
-import { ArrowDownOnSquareIcon, ArrowUturnLeftIcon, TrashIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowDownOnSquareIcon,
+  ArrowUturnLeftIcon,
+} from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import React from "react";
 
@@ -11,7 +14,7 @@ function Container({ children }) {
   );
 }
 
-function ControlButton({ children, customStyle = null }) {
+function ControlButton({ children, customStyle = null, handleCLick }) {
   return (
     <button
       type="button"
@@ -19,20 +22,17 @@ function ControlButton({ children, customStyle = null }) {
         "flex w-full items-center justify-center gap-1 rounded-xl px-1 py-3 font-bold capitalize hover:bg-gray-200 active:scale-95",
         customStyle,
       )}
+      onClick={handleCLick}
     >
       {children}
     </button>
   );
 }
 
-function ActionsBar() {
+function ActionsBar({ restoreDefaults }) {
   return (
     <Container>
-      <ControlButton customStyle={"text-red-600"}>
-        <TrashIcon className="size-5 min-w-8 text-red-600" />
-        clear data
-      </ControlButton>
-      <ControlButton>
+      <ControlButton handleCLick={restoreDefaults}>
         <ArrowUturnLeftIcon className="size-5 min-w-8" />
         defaults
       </ControlButton>
