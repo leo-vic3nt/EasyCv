@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { CurriculumVitaeContainer } from "./components/CurriculumVitae/CurriculumVitaeContainer";
 import { ActionsBar } from "./components/Aside/ActionsBar";
 import { ModeToggle } from "./components/Aside/ModeToggle";
@@ -12,6 +12,7 @@ import {
   EDITOR_MODES,
 } from "./lib/constants";
 import { StyleEditor } from "./components/Aside/StyleEditor/StyleEditor";
+import { useReactToPrint } from "react-to-print";
 
 function Container({ children }) {
   return (
@@ -35,6 +36,7 @@ function App() {
   const [cvFont, setCvFont] = useState(CV_FONTS.sans);
   const [cvAccentColor, setCvAccentColor] = useState("#000000");
   const [cvLanguage, setCvLanguage] = useState(CV_LANGUAGES.en);
+  const cvRef = useRef(null);
 
   function restoreDefaults() {
     setPersonalsDetailsData(DUMMY_DATA.personalInfo);
@@ -46,10 +48,16 @@ function App() {
     setCvAccentColor("#000000");
   }
 
+  const printCvFn = useReactToPrint({
+    contentRef: cvRef,
+    documentTitle: `curriculum`,
+    suppressErrors: true,
+  });
+
   return (
     <Container>
       <SideContainer>
-        <ActionsBar restoreDefaults={restoreDefaults}/>
+        <ActionsBar restoreDefaults={restoreDefaults} printCvFn={printCvFn} />
         <ModeToggle setMode={setMode} />
         {currentMode === EDITOR_MODES.contentEditor ? (
           <ContentEditor
@@ -85,6 +93,7 @@ function App() {
         experienceData={experienceData}
         projectsData={projectsData}
         skillsData={skillsData}
+        ref={cvRef}
       />
     </Container>
   );

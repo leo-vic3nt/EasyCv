@@ -29,14 +29,14 @@ function ControlButton({ children, customStyle = null, handleCLick }) {
   );
 }
 
-function ActionsBar({ restoreDefaults }) {
+function ActionsBar({ restoreDefaults, printCvFn }) {
   return (
     <Container>
       <ControlButton handleCLick={restoreDefaults}>
         <ArrowUturnLeftIcon className="size-5 min-w-8" />
         defaults
       </ControlButton>
-      <ControlButton>
+      <ControlButton handleCLick={printCvFn}>
         <ArrowDownOnSquareIcon className="size-5 min-w-8" />
         download
       </ControlButton>

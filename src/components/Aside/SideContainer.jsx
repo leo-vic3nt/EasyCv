@@ -3,7 +3,7 @@ import React from "react";
 
 function SideContainer({ children }) {
   return (
-    <>
+    <div className="print:hidden">
       <style>
         {`
 				.custom-scrollbar {
@@ -21,7 +21,7 @@ function SideContainer({ children }) {
           {children}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
