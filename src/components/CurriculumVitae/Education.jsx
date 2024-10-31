@@ -16,7 +16,7 @@ function EducationItem({
           <p className="font-bold">{degree}</p>
           <p>{school}</p>
         </div>
-        <div className="text-center">
+        <div className="text-right">
           <p className="font-bold">{`${startDate} - ${endDate}`}</p>
           <p>{location}</p>
         </div>

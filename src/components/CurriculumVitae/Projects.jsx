@@ -8,7 +8,7 @@ function ProjectItem({ title, startDate, endDate, additionalInfo = [] }) {
         <div>
           <p className="font-bold">{title}</p>
         </div>
-        <div className="text-center min-w-fit">
+        <div className="text-right min-w-fit">
           <p className="font-bold">{`${startDate} - ${endDate}`}</p>
         </div>
       </div>

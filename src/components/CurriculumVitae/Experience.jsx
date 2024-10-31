@@ -16,7 +16,7 @@ function ExperienceItem({
           <p className="font-bold">{role}</p>
           <p>{companyName}</p>
         </div>
-        <div className="text-center min-w-fit">
+        <div className="text-right min-w-fit">
           <p className="font-bold">{`${startDate} - ${endDate}`}</p>
           <p>{location}</p>
         </div>
